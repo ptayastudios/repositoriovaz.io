@@ -3,43 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>perfil Vaz.io</title>
-    <link rel="stylesheet" href="stylep.css">
+    <title>Perfil Vaz.io</title>
+    <link rel="stylesheet" href="perfil.css">
 </head>
 <body>
     <header>
         <img id="logo" src="../../imagens/logo.png" alt="Logo Vaz.io">
     </header>
 
-  <main>
-    <div id="modalfodasticomuitofoda"></div>
-    
-  </main>
-   <main>
-        <section class="perfil">
-            <div class="avatar">
-          <img src alt="Avatar">
-
-    </div>
-    <div class="info-principal">
-     <h1></h1>
-     <p class="username">
-      <div class="premium">assine o plano premium</div>
-                </p>
+    <main>
+        <div id="profile-container">
+            <!-- Coluna esquerda: avatar e nome -->
+            <div id="profile-left">
+                <img id="avatar" src="../../imagens/avatar.png" alt="Avatar do Usuário">
+                <h2>user123</h2>
+                <p class="bio">Eu tenho mais de 1 milhão em ações em criptomoedas DogMoney.</p>
             </div>
-        </section>
 
-        <section class="dados">
-            <p><strong>email:</strong> </p>
-            <p><strong>telefone:</strong></p>
-            <p><strong>CPF:</strong></p>
-            <p><strong>Sexo:</strong></p>
-            <div class="botao">gravar</div>
-        </section>
+            <!-- Coluna direita: informações detalhadas e ações -->
+            <div id="profile-right">
+                <section class="profile-section">
+                    <h3>Informações Pessoais</h3>
+                    <div class="info-row"><span>Email:</span> example@example.com</div>
+                    <div class="info-row"><span>Telefone:</span> +55 11 98765-4321</div>
+                    <div class="info-row"><span>CEP:</span> 01234-567</div>
+                    <div class="info-row"><span>Usuário:</span> @user123</div>
+                    <div class="info-row"><span>Localização:</span> Brasil</div>
+                </section>
+
+                <section class="profile-section">
+                    <h3>Ações</h3>
+                    <div class="actions">
+                        <button>Editar Perfil</button>
+                        <button>Configurações</button>
+                        <button>Alterar Senha</button>
+                    </div>
+                </section>
+            </div>
+        </div>
     </main>
 
-  <footer></footer>
-
-
+    <footer></footer>
 </body>
-</html> 
+</html>

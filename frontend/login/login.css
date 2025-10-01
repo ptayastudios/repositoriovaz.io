@@ -26,7 +26,7 @@ main {
     justify-content: center;
     align-items: center;
     padding: 70px;
-    margin-top: -115px;
+    margin-top: -40px;
 }
 
 #login-box {
@@ -87,6 +87,8 @@ button {
 
 button:hover {
     background: #ffa500;
+    color: #000;
+    
 }
 
 footer {
@@ -98,55 +100,4 @@ footer {
 #logo {
     width: 750px;
     height: 80px;
-}
-.perfil {
-    display: flex;
-    align-items: flex-start;
-    padding: 30px 10px;
-    gap: 20px;
-}
-
-.avatar img {
-    width: 80px;
-    height: 80px;
-    border: 2px solid black;
-    border-radius: 50%;
-    object-fit: cover;
-    padding: 20px;
-}
-
-.info-principal h1 {
-    font-size: 24px;
-    color: #000;
-}
-
-.username {
-    font-size: 16px;
-    color: #333;
-}
-
-.premium {
-    background-color: #ffa933;
-    color: black;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin-left: 8px;
-}
-
-
-.dados {
-    background-color: #eae3d2;
-    margin: 0 40px;
-    padding: 25px;
-    border-radius: 20px;
-    font-size: 18px;
-    line-height: 3;
-    width: 50%;
-}
-
-.botao {
-    text-align: right;
-    font-size: 20px;
-    margin-top: 20px;
 }

@@ -1,0 +1,138 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+    background: #fff9ed;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    background: #0c054a;
+    color: #ffb52e;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    border-bottom: 10px solid #ffb52e;
+    padding: 0 20px;
+}
+
+main {
+    padding: 50px 20px;
+}
+
+#profile-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#profile-left {
+    text-align: center;
+    background: #0c054a;
+    padding: 30px;
+    border-radius: 15px;
+    color: #ffb52e;
+}
+
+#avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #ffb52e;
+    margin-bottom: 20px;
+}
+
+#profile-left h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.bio {
+    font-size: 14px;
+    color: #ffd966;
+    line-height: 1.4;
+}
+
+#profile-right {
+    background: #0c054a;
+    padding: 30px;
+    border-radius: 15px;
+    color: #ffb52e;
+}
+
+.profile-section {
+    margin-bottom: 30px;
+}
+
+.profile-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #ffb52e;
+    padding-bottom: 5px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 14px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ffb52e;
+}
+
+.info-row span {
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.actions button {
+    background: #ffb52e;
+    color: #0a0040;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    background: #ffa500;
+}
+
+footer {
+    background: #0a0040;
+    border-top: 5px solid #ffb52e;
+    height: 40px;
+}
+
+#logo {
+    width: 750px;
+    height: 80px;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+    #profile-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
