@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+    background: #fff9ed;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    background: #0c054a;
+    color: #ffb52e;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: end;
+    border-bottom: 10px solid #ffb52e;
+
+}
+
+
+
+
+
+
+
+button {
+    background: #ffb52e;
+    color: #0a0040;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffa500;
+}
+
+footer {
+    background: #0a0040;
+    border-top: 5px solid #ffb52e;
+    height: 40px;
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#logo {
+    width: 750px;
+    height: 80px;
+}
+
+
+
+#meio{
+    background-color: fff9ed;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    height: 200%;
+}
+
+#esq{
+    background-color: aqua;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+#dir{
+    background-color: brown;
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: start;
+}
+
+
+
+
+
+.caseProduto{
+    background-color: #e9e3d0;
+    border: solid #0a0040 2px;
+    border-radius: 10px;
+}
+
+
+#case1{
+    height: 90%;
+    width: 90%;
+}
+
+#case2{
+    height: 400px;
+    width: 70%;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#case3{
+    height: 70%;
+    width: 90%;
+}
+
+#search{
+    width: 70%;
+    margin: 5px;
+    border-radius: 30px;
+}
+
+#combodecaixaIMG{
+    height: 90%;
+}
+
+
+
+
+#descCMC{
+    background-color: #b3a78d;
+    width: 40%;
+    height: 95%;
+    border-radius: 3px;
+}
