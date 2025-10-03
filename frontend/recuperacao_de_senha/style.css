@@ -4,21 +4,33 @@
   box-sizing: border-box;
   font-family: monospace;
 }
+@font-face {
+  font-family: 'aliens and cows';
+  src: url('../fontes/aliens\ and\ cows_trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
-    background: #fff9ed;
+     background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
+            radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%),
+            #d2d2d5;
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+   
 }
 
+
+
 header {
-    background: #0c054a;
-    color: #ffb52e;
+    background: #1c1c1d;
+    color: #C9A441;
     display: grid;
     grid-template-columns: 150px 1fr;
-    align-items: center;
-    border-bottom: 10px solid #ffb52e;
+    align-items: end;
+    border-bottom: 10px solid #C9A441;
+
 }
 
 main {
@@ -30,7 +42,7 @@ main {
 }
 
 #login-box {
-    background: #0c054a;
+    background: #1c1c1d;
     padding: 30px;
     border-radius: 5px;
     text-align: center;
@@ -89,13 +101,28 @@ button:hover {
     background: #ffa500;
 }
 
+
 footer {
-    background: #0a0040;
-    border-top: 5px solid #ffb52e;
+    background: #1c1c1d;
+    border-top: 5px solid #C9A441;
     height: 40px;
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    left: 0;
 }
 
 #logo {
     width: 750px;
     height: 80px;
+}
+
+#cadastro:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#Entrar:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }

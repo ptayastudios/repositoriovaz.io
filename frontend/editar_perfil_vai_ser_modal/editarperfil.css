@@ -12,15 +12,6 @@ body {
     min-height: 100vh;
 }
 
-header {
-    background: #0c054a;
-    color: #ffb52e;
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    align-items: center;
-    border-bottom: 10px solid #ffb52e;
-    padding: 0 20px;
-}
 
 main {
     display: flex;
@@ -31,7 +22,7 @@ main {
 }
 
 #edit-box {
-    background: #0c054a;
+    background: #1c1c1d;;
     padding: 40px;
     border-radius: 10px;
     text-align: center;
@@ -77,11 +68,6 @@ button:hover {
     background: #ffa500;
 }
 
-footer {
-    background: #0a0040;
-    border-top: 5px solid #ffb52e;
-    height: 40px;
-}
 
 #logo {
     width: 150px;

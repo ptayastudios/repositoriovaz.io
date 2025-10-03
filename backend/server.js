@@ -18,8 +18,21 @@ app.get("/produtos", async (req,res) => {
     return res.status(500).json({ erro: "erro no servidor" });
 
   }
-});
+}); 
 
+app.get("/contas", async (req,res) => {
+  try{
+
+    const contas_ = await pool.query("select * from contas");
+    return res.status(200).json(contas_.rows);
+
+  }catch (error){
+
+    console.error("erro ao buscar produtos", error);
+    return res.status(500).json({ erro: "erro no servidor" });
+
+  }
+}); 
 
 app.listen(3000, () => {
   console.log("No ar!");
