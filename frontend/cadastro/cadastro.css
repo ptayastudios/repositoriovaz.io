@@ -47,9 +47,8 @@ main {
     border-radius: 5px;
     text-align: center;
     color: #ffb52e;
-    height: 90%;
     width: 30%;
-    
+    margin-top: 20px;
 }
 
 #login-box h2 {

@@ -13,12 +13,11 @@
 
 body {
      background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
-            radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%),
-            #d2d2d5;
+            radial-gradient(circle at 20% 70%, rgba(98, 98, 99, 0.871), transparent 80%),
+            #dddde0;
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-   
 }
 
 
@@ -40,7 +39,8 @@ main {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 50px;
-    max-width: 900px;
+    width: 80%;
+    height: 80%;
     margin: 0 auto;
 }
 
@@ -49,14 +49,15 @@ main {
     background: #1c1c1d;
     padding: 30px;
     border-radius: 15px;
-    color: #ffb52e;
+    color: #C9A441;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
 #avatar {
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    border: 4px solid #ffb52e;
+    border: 4px solid #C9A441;
     margin-bottom: 20px;
 }
 
@@ -64,6 +65,7 @@ main {
     font-size: 28px;
     margin-bottom: 15px;
     letter-spacing: 2px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
 .bio {
@@ -76,7 +78,7 @@ main {
     background: #1c1c1d;
     padding: 30px;
     border-radius: 15px;
-    color: #ffb52e;
+    color: #C9A441;
 }
 
 .profile-section {
@@ -87,7 +89,7 @@ main {
     font-size: 20px;
     margin-bottom: 15px;
     letter-spacing: 1px;
-    border-bottom: 2px solid #ffb52e;
+    border-bottom: 2px solid #C9A441;
     padding-bottom: 5px;
 }
 
@@ -97,7 +99,7 @@ main {
     margin: 10px 0;
     font-size: 14px;
     padding-bottom: 5px;
-    border-bottom: 1px solid #ffb52e;
+    border-bottom: 1px solid #C9A441;
 }
 
 .info-row span {
@@ -112,7 +114,7 @@ main {
 }
 
 .actions button {
-    background: #ffb52e;
+    background: #C9A441;
     color: #0a0040;
     border: none;
     padding: 10px 20px;
@@ -123,7 +125,7 @@ main {
 }
 
 .actions button:hover {
-    background: #ffa500;
+    background: #a57b2d;
 }
 
 
@@ -150,3 +152,10 @@ footer {
 }
 
 
+
+
+#seta{
+    width: 40px;
+    position:absolute;
+    left: 20px;
+}

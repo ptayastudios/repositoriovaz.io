@@ -13,27 +13,32 @@
 
 
     <main>
+        
+
+
         <div id="profile-container">
+            
             <div id="profile-left">
-                <img id="avatar" src="../../imagens/avatar.png" alt="Avatar do Usuário">
-                <h2>user123</h2>
-                <p class="bio">Eu tenho mais de 1 milhão em ações em criptomoedas DogMoney.</p>
+                <a href="../catalogo/index.html"><img src="../../imagens/seta.png" id="seta"></a>
+                <img id="avatar" src="../../imagens/avatar.png">
+                <h2 id="info-nome">user123</h2>
+                <p class="bio" id="info-descricao">Eu tenho mais de 1 milhão em ações em criptomoedas DogMoney.</p>
             </div>
 
-            
             <div id="profile-right">
                 <section class="profile-section">
                     <h3>Informações Pessoais</h3>
-                    <div class="info-row"><span>Email:</span> example@example.com</div>
-                    <div class="info-row"><span>Telefone:</span> +55 11 98765-4321</div>
-                    <div class="info-row"><span>CEP:</span> 01234-567</div>
-                    <div class="info-row"><span>Usuário:</span> @user123</div>
-                    <div class="info-row"><span>Localização:</span> Brasil</div>
+                    <div class="info-row"><span>Email:</span> <p id="info-email">example@example.com</pp></div>
+                    <div class="info-row"><span>Telefone:</span> <p id="info-telefone">+55 11 98765-4321</p></div>
+                    <div class="info-row"><span>CEP:</span> <p id="info-cep">01234-567</p></div>
+                    <div class="info-row"><span>Usuário:</span> <p id="info-nome2">@user123</p></div>
+                    <div class="info-row"><span>Localização:</span> <p id="info-localizacao">Brasil</p></div>
                 </section>
 
                 <section class="profile-section">
                     <div class="actions">
-                        <button>Editar Perfil</button>
+                        <button id="editar">Editar Perfil</button>
+                        <button id="sair">Sair da conta</button>
                     </div>
                 </section>
             </div>
@@ -41,5 +46,6 @@
     </main>
 
     <footer></footer>
+    <script src="script.js"></script>
 </body>
 </html>
