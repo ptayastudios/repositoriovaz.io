@@ -53,9 +53,11 @@ main {
 }
 
 #login-box h2 {
-    font-size: 26px;
+    font-size: 40px;
     margin-bottom: 20px;
     letter-spacing: 5px;
+    font-family: 'aliens and cows', monospace;
+    font-weight: 100;
 }
 
 #login-box label {

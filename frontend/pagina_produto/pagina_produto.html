@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto | Vaz.io</title>
+    <link rel="stylesheet" href="paginaproduto.css">
+</head>
+<body>
+    <header>
+        <img id="logo" src="../../imagens/logo.png" alt="Logo Vaz.io">
+    </header>
+
+    <main>
+        
+        <section class="product-container">
+            <div class="product-image">
+                <img src="../../imagens/produto-exemplo.jpg" alt="Nome do Produto" id="img">
+            </div>
+            <div class="product-details">
+                <h1 id="nome">Nome do Produto</h1>
+
+                <p class="product-description" id="dsc">
+                    Este é um produto de alta qualidade, perfeito para quem busca estilo, conforto e durabilidade.
+                    Fabricado com materiais selecionados para garantir a melhor experiência possível.
+                </p>
+
+                <p class="product-price" id="preco">R$ 199,90</p>
+
+                <div class="product-options">
+                    <label for="size">Tamanho:</label>
+                    <select id="size">
+                        <option>PP</option>
+                        <option>P</option>
+                        <option>M</option>
+                        <option>G</option>
+                        <option>GG</option>
+                        <option>XG</option>
+                        <option>EGG</option>
+                    </select>
+
+                    <label for="quantity">Quantidade:</label>
+                    <input type="number" id="quantity" min="1" value="1">
+                </div>
+
+                <button class="buy-button">COMPRAR AGORA</button>
+                <button class="cart-button">ADICIONAR AO CARRINHO</button>
+            </div>
+        </section>
+
+        <section class="product-specs">
+            <h2>Especificações Técnicas</h2>
+            <ul>
+                <li>Material: </li>
+                <li>Cor: </li>
+                <li>Modelo: </li>
+                <li>Garantia: </li>
+                <li>Origem: </li>
+            </ul>
+        </section>
+
+        <section class="related-products">
+            <div class="related-grid">
+                <div class="product-card">
+                    <img src="../../imagens/produto1.jpg" alt="Produto 1">
+                    <h4>Produto Relacionado 1</h4>
+                    <p>R$ 149,90</p>
+                </div>
+                <div class="product-card">
+                    <img src="../../imagens/produto2.jpg" alt="Produto 2">
+                    <h4>Produto Relacionado 2</h4>
+                    <p>R$ 89,90</p>
+                </div>
+                <div class="product-card">
+                    <img src="../../imagens/produto3.jpg" alt="Produto 3">
+                    <h4>Produto Relacionado 3</h4>
+                    <p>R$ 249,90</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+    <script src="produto.js"></script>
+</body>
+</html>

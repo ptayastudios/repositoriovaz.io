@@ -65,7 +65,7 @@ main {
     font-size: 28px;
     margin-bottom: 15px;
     letter-spacing: 2px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    box-shadow: 4 8px 16px rgba(0,0,0,0.1);
 }
 
 .bio {
@@ -86,11 +86,13 @@ main {
 }
 
 .profile-section h3 {
-    font-size: 20px;
+    font-size: 40px;
     margin-bottom: 15px;
     letter-spacing: 1px;
     border-bottom: 2px solid #C9A441;
     padding-bottom: 5px;
+    font-family: 'aliens and cows', monospace;
+    font-weight: 100;
 }
 
 .info-row {
@@ -128,7 +130,6 @@ main {
     background: #a57b2d;
 }
 
-
 footer {
     background: #1c1c1d;
     border-top: 5px solid #C9A441;
@@ -152,10 +153,118 @@ footer {
 }
 
 
-
-
 #seta{
     width: 40px;
     position:absolute;
     left: 20px;
+}
+
+#editar{
+    text-decoration: none;
+}
+
+#editar a{
+    text-decoration: none;
+    color: #0a0040;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* BOTÃO X (FECHAR) */
+.fechar {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 30px;
+  color: #ffb52e;
+  cursor: pointer;
+}
+
+/* ESTILO DO EDIT BOX DENTRO DO MODAL */
+#edit-box {
+  background: #1c1c1d;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  color: #ffb52e;
+  width: 350px;
+}
+
+#edit-box h2 {
+  font-size: 35px;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+  font-family: 'aliens and cows', monospace;
+  font-weight: 100;
+}
+
+#edit-box label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-size: 14px;
+}
+
+#edit-box input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ffb52e;
+  border-radius: 5px;
+  background: #d3d3d3;
+  margin-bottom: 15px;
+}
+
+/* Botão de salvar no modal */
+#edit-box button {
+  background: #ffb52e;
+  color: #0a0040;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+#edit-box button:hover {
+  background: #ffa500;
 }

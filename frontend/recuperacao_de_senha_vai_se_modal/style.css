@@ -46,16 +46,18 @@ main {
     padding: 30px;
     border-radius: 5px;
     text-align: center;
-    color: #ffb52e;
+    color: #C9A441;
     height: 90%;
     width: 30%;
     min-width: 300px;    
 }
 
 #login-box h2 {
-    font-size: 26px;
+    font-size: 40px;
     margin-bottom: 20px;
     letter-spacing: 5px;
+    font-family: 'aliens and cows', monospace;
+    font-weight: 100;
 }
 
 #login-box label {
@@ -68,7 +70,7 @@ main {
 #login-box input {
     width: 100%;
     padding: 10px;
-    border: 2px solid #ffb52e;
+    border: 2px solid #C9A441;
     border-radius: 5px;
     background: #d3d3d3;
     margin-bottom: 15px;
@@ -81,13 +83,13 @@ main {
 }
 
 .links a {
-    color: #ffb52e;
+    color: #C9A441;
     font-size: 13px;
     text-decoration: none;
 }
 
 button {
-    background: #ffb52e;
+    background: #C9A441;
     color: #0a0040;
     border: none;
     padding: 10px 20px;
@@ -98,7 +100,7 @@ button {
 }
 
 button:hover {
-    background: #ffa500;
+    background: #C9A441;
 }
 
 

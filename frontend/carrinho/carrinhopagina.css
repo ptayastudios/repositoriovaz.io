@@ -1,0 +1,167 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+     background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
+            radial-gradient(circle at 20% 70%, rgba(98, 98, 99, 0.871), transparent 80%),
+            #dddde0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    background: #1c1c1d;
+    color: #C9A441;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: end;
+    border-bottom: 10px solid #C9A441;
+}
+
+#logo {
+    width: 750px;
+    height: 80px;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nome {
+    font-size: 40px;
+    font-family: 'aliens and cows';
+    font-weight: 200;
+    margin: 20px 0;
+}
+
+#cart-container {
+    width: 90%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cart-item {
+    background-color: #f7f3ef;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.item-img {
+    width: 120px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.item-info {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.item-name {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.item-desc {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.item-price {
+    font-size: 18px;
+    color: #1c1c1d;
+    font-weight: bold;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.item-qty {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.qty-btn {
+    background-color: #C9A441;
+    border: none;
+    color: #1c1c1d;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.qty-btn:hover {
+    background-color: #e0c651;
+}
+
+.remove-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #b03e3e;
+}
+.remove-btn:hover {
+    color: #e05b5b;
+}
+
+#cart-summary {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#cart-summary h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.summary-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.summary-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #C9A441;
+    color: #1c1c1d;
+    font-weight: bold;
+}
+.summary-buttons button:hover {
+    background-color: #e0c651;
+}
+
+footer {
+    background: #1c1c1d;
+    border-top: 5px solid #C9A441;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}

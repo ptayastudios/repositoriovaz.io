@@ -78,17 +78,25 @@ app.get("/contas/:id", async (req, res) => {
   }
 });
 
-// app.get("/produtos/:id", async (req, res) => {
-//   const { id } = req.params;
 
-//   try{
-//     const resultado = await pool.query("SELECT * FROM produtos WHERE id_usuario = $1", [id]);
-//     if(resultado.rows.length === 0){ return res.status(404).json({ erro: "produto nao encontrado" }); }
-//   }catch(error){
-//     console.error("erro ao buscar produto", erro);
-//     res.status(500).json({ erro: "erro no servidor" });
-//   }
-// });
+
+
+app.get("/produtos/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try{
+    const resultado = await pool.query("SELECT * FROM produtos WHERE id_produto = $1", [id]);
+    if(resultado.rows.length === 0){ return res.status(404).json({ erro: "produto nao encontrado" }); }
+
+    return res.status(200).json(resultado.rows[0]);
+  }catch(error){
+    console.error("erro ao buscar produto", erro);
+    res.status(500).json({ erro: "erro no servidor" });
+  }
+});
+
+
+
 
 
 app.listen(3000, () => {

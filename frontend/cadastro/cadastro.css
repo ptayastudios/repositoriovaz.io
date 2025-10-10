@@ -12,9 +12,7 @@
 }
 
 body {
-     background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
-            radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%),
-            #d2d2d5;
+     background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%),#d2d2d5;
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
@@ -49,12 +47,15 @@ main {
     color: #ffb52e;
     width: 30%;
     margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 #login-box h2 {
-    font-size: 26px;
+    font-size: 40px;
     margin-bottom: 20px;
     letter-spacing: 5px;
+    font-family: 'aliens and cows', monospace;
+    font-weight: 100;
 }
 
 #login-box label {

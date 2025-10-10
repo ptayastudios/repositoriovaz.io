@@ -1,6 +1,7 @@
 const sair = document.querySelector("#sair");
 
 
+
 document.addEventListener('DOMContentLoaded', async () => {
     const id = localStorage.getItem('id_salvo');
 
@@ -48,3 +49,27 @@ sair.addEventListener('click', ()=>{
     localStorage.removeItem('id_salvo');
     window.location.href = '../catalogo/index.html';
 });
+
+
+
+
+
+
+/*
+const modal = document.querySelector("#modalPerfil");
+const btn = document.querySelector("#editar");
+const span = document.querySelector(".fechar");
+
+    btn.addEventListener('click', ()=>{
+        modal.style.display = "flex";
+    });
+    span.addEventListener('click', ()=>{
+        modal.style.display = "none";
+    });
+    window.addEventListener('click', (event)=>{
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+    
+*/
