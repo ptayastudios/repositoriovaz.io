@@ -7,7 +7,7 @@ const nome = document.querySelector('#nome');
 const preco = document.querySelector('#preco');
 const dsc = document.querySelector('#dsc');
 
-const quantidade = document.querySelector('#quantity');
+const quantidade = document.querySelector('#quantidade');
 const tamanho = document.querySelector('#size');
 
 

@@ -1,4 +1,5 @@
 const sair = document.querySelector("#sair");
+const atualizar = document.querySelector("#atualizar");
 
 
 
@@ -48,6 +49,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 sair.addEventListener('click', ()=>{
     localStorage.removeItem('id_salvo');
     window.location.href = '../catalogo/index.html';
+});
+
+
+
+
+
+
+
+atualizar.addEventListener("click", ()=>{
+    const nome = document.querySelector("#nome");
+    const email = document.querySelector("#email");
+    const tel = document.querySelector("#tel");
+    const cep = document.querySelector("#cep");
+    const senha = document.querySelector("#senha");
+
+
+
 });
 
 

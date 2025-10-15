@@ -16,17 +16,17 @@
         
 
 
-        <div id="profile-container">
+        <div id="perfilcontainer">
             
-            <div id="profile-left">
+            <div id="perfilesquerda">
                 <a href="../catalogo/index.html"><img src="../../imagens/seta.png" id="seta"></a>
                 <img id="avatar" src="../../imagens/avatar.png">
                 <h2 id="info-nome">user123</h2>
                 <p class="bio" id="info-descricao">Eu tenho mais de 1 milhão em ações em criptomoedas DogMoney.</p>
             </div>
 
-            <div id="profile-right">
-                <section class="profile-section">
+            <div id="perfildireita">
+                <section class="persilsecao">
                     <h3>Informações Pessoais</h3>
                     <div class="info-row"><span>Email:</span> <p id="info-email">example@example.com</pp></div>
                     <div class="info-row"><span>Telefone:</span> <p id="info-telefone">+55 11 98765-4321</p></div>
@@ -35,8 +35,8 @@
                     <div class="info-row"><span>Localização:</span> <p id="info-localizacao">Brasil</p></div>
                 </section>
 
-                <section class="profile-section">
-                    <div class="actions">
+                <section class="persilsecao">
+                    <div class="acoaes">
                         <button id="abrirModal">Editar Perfil/Atualizar</button>
                         <button id="sair">Sair da conta</button>
                     </div>
@@ -53,7 +53,7 @@
       <span class="fechar">&times;</span>
 
       <div id="edit-box">
-        <h2>Editar Perfil / Atualizar</h2>
+        <h2>Editar Perfil</h2>
         <form>
           <label for="nome">Nome Completo</label>
           <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
@@ -68,16 +68,16 @@
           <input type="text" id="cep" name="cep" placeholder="00000-000">
 
           <label for="senha-edit">Senha</label>
-          <input type="password" id="senha-edit" name="senha" placeholder="Digite sua senha">
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
 
-          <button type="submit">Salvar Alterações</button>
+          <button id="atualizar">Salvar Alterações</button>
         </form>
       </div>
     </div>
   </div>
 
-
-    <script src="script.js">
+    <script src="script.js"></script>
+    <script>
     const modal = document.getElementById("modalPerfil");
     const btn = document.getElementById("abrirModal");
     const span = document.querySelector(".fechar");

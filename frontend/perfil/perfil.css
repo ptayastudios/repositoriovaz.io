@@ -35,7 +35,7 @@ main {
     padding: 50px 20px;
 }
 
-#profile-container {
+#perfilcontainer {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 50px;
@@ -44,7 +44,7 @@ main {
     margin: 0 auto;
 }
 
-#profile-left {
+#perfilesquerda {
     text-align: center;
     background: #1c1c1d;
     padding: 30px;
@@ -61,7 +61,7 @@ main {
     margin-bottom: 20px;
 }
 
-#profile-left h2 {
+#perfilesquerda h2 {
     font-size: 28px;
     margin-bottom: 15px;
     letter-spacing: 2px;
@@ -74,18 +74,18 @@ main {
     line-height: 1.4;
 }
 
-#profile-right {
+#perfildireita {
     background: #1c1c1d;
     padding: 30px;
     border-radius: 15px;
     color: #C9A441;
 }
 
-.profile-section {
+.persilsecao{
     margin-bottom: 30px;
 }
 
-.profile-section h3 {
+.persilsecao h3 {
     font-size: 40px;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -108,14 +108,14 @@ main {
     font-weight: bold;
 }
 
-.actions {
+.acoaes {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.actions button {
+.acoaes button {
     background: #C9A441;
     color: #0a0040;
     border: none;
@@ -126,7 +126,7 @@ main {
     cursor: pointer;
 }
 
-.actions button:hover {
+.acoaes button:hover {
     background: #a57b2d;
 }
 
@@ -146,7 +146,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #profile-container {
+    #perfilcontainer {
         grid-template-columns: 1fr;
         gap: 30px;
     }

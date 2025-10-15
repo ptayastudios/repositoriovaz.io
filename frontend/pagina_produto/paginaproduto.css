@@ -32,7 +32,7 @@ main {
   padding: 70px 20px;
 }
 
-.product-container {
+.container {
   display: flex;
   background: #1c1c1d;
   color: #ffb52e;
@@ -43,27 +43,27 @@ main {
   margin: 0 auto 50px auto;
 }
 
-.product-image {
+.produtoimg {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.product-image img {
+.produtoimg img {
   width: 100%;
   max-width: 400px;
   border: 4px solid #ffb52e;
   border-radius: 10px;
 }
 
-.product-details {
+.detalhesproduto{
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.product-details h1 {
+.detalhesproduto h1 {
   font-size: 40px;
   margin-bottom: 10px;
   font-family: 'aliens and cows', monospace;
@@ -74,26 +74,26 @@ main {
   margin-bottom: 15px;
 }
 
-.product-description {
+.produtodsc {
   font-size: 15px;
   margin-bottom: 15px;
 }
 
-.product-price {
+.produtopreco {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.product-options {
+.produtoopcoes {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 20px;
 }
 
-.product-options select,
-.product-options input {
+.produtoopcoes select,
+.produtoopcoes input {
   padding: 5px;
   border-radius: 5px;
   border: 2px solid #ffb52e;
@@ -101,7 +101,7 @@ main {
   color: #000;
 }
 
-.buy-button, .cart-button {
+.comprabotao, .carrinhobotao {
   background: #ffb52e;
   color: #0a0040;
   border: none;
@@ -114,12 +114,12 @@ main {
   transition: 0.2s;
 }
 
-.buy-button:hover, .cart-button:hover {
+.comprabotao:hover, .carrinhobotao:hover {
   background: #ffa500;
 }
 
 
-.product-specs {
+.produtoespecificacoes {
   max-width: 1000px;
   background: #1c1c1d;
   color: #ffb52e;
@@ -128,35 +128,35 @@ main {
   margin: 0 auto 50px auto;
 }
 
-.product-specs h2 {
+.produtoespecificacoes h2 {
   margin-bottom: 30px;
   letter-spacing: 2px;
   font-family: 'aliens and cows', monospace;
   font-weight: 100;
 }
 
-.product-specs ul {
+.produtoespecificacoes ul {
   list-style: square;
   margin-left: 20px;
 }
 
-.related-products {
+.produtorelacionados{
   max-width: 1000px;
   margin: 0 auto 80px auto;
   text-align: center;
 }
 
-.related-products h2 {
+.produtorelacionados h2 {
   margin-bottom: 20px;
 }
 
-.related-grid {
+.ralacionadosgrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-.product-card {
+.cardproduto{
   background: #1c1c1d;
   color: #ffb52e;
   padding: 15px;
@@ -164,13 +164,13 @@ main {
   transition: transform 0.2s;
 }
 
-.product-card img {
+.cardproduto img {
   width: 100%;
   border-radius: 10px;
   border: 2px solid #ffb52e;
 }
 
-.product-card:hover {
+.cardproduto:hover {
   transform: scale(1.05);
 }
 
@@ -185,16 +185,16 @@ footer {
 }
 
 @media (max-width: 800px) {
-  .product-container {
+  .container {
     flex-direction: column;
     text-align: center;
   }
 
-  .product-options {
+  .produtopreco {
     justify-content: center;
   }
 
-  .product-image img {
+  .produtoimg img {
     max-width: 300px;
   }
 }

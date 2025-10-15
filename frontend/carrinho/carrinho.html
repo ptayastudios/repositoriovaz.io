@@ -14,13 +14,17 @@
     <main>
         <h1 class="nome">Carrinho de Compras</h1>
 
-        <section id="cart-container">
+        <section id="carrinhocontainer">
+            <div id="carrinhoitens">
+                <!-- Itens do carrinho serão inseridos aqui dinamicamente -->
+            </div>
+            <p id="carrinhovazio">Seu carrinho está vazio.</p>
         </section>
 
-        <section id="cart-summary">
+        <section id="carrinhosumario">
             <h2>Total: R$ <span id="total-value">0.00</span></h2>
-            <div class="summary-buttons">
-                <button id="clear-cart">Esvaziar Carrinho</button>
+            <div class="sumariobotoes">
+                <button id="limparcarrinho">Esvaziar Carrinho</button>
                 <button id="checkout">Finalizar Compra</button>
             </div>
         </section>

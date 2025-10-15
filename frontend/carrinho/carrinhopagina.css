@@ -42,7 +42,7 @@ main {
     margin: 20px 0;
 }
 
-#cart-container {
+#carrinhocontainer {
     width: 90%;
     max-width: 900px;
     display: flex;
@@ -51,7 +51,7 @@ main {
     margin-top: 20px;
 }
 
-.cart-item {
+.carrinhoitens {
     background-color: #f7f3ef;
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     border-radius: 5px;
@@ -61,47 +61,47 @@ main {
     padding: 15px;
 }
 
-.item-img {
+.itemimg {
     width: 120px;
     height: auto;
     border-radius: 5px;
 }
 
-.item-info {
+.iteminfo {
     flex: 1;
     margin: 0 20px;
 }
 
-.item-name {
+.itemname {
     font-size: 22px;
     margin-bottom: 5px;
 }
 
-.item-desc {
+.itemdesc {
     font-size: 14px;
     color: #444;
     margin-bottom: 10px;
 }
 
-.item-price {
+.itempreco {
     font-size: 18px;
     color: #1c1c1d;
     font-weight: bold;
 }
 
-.item-actions {
+.itemacoes {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.item-qty {
+.itemquantidade {
     width: 50px;
     text-align: center;
     font-size: 16px;
 }
 
-.qty-btn {
+.quantidaebotao {
     background-color: #C9A441;
     border: none;
     color: #1c1c1d;
@@ -111,38 +111,38 @@ main {
     cursor: pointer;
     border-radius: 5px;
 }
-.qty-btn:hover {
+.quantidadebotao:hover {
     background-color: #e0c651;
 }
 
-.remove-btn {
+.removebotao {
     background-color: transparent;
     border: none;
     font-size: 22px;
     cursor: pointer;
     color: #b03e3e;
 }
-.remove-btn:hover {
+.removebotao:hover {
     color: #e05b5b;
 }
 
-#cart-summary {
+#carrinhosumario {
     margin-top: 30px;
     text-align: center;
 }
 
-#cart-summary h2 {
+#carrinhosumario h2 {
     font-size: 26px;
     margin-bottom: 15px;
 }
 
-.summary-buttons {
+.sumariobotoes {
     display: flex;
     gap: 15px;
     justify-content: center;
 }
 
-.summary-buttons button {
+.sumariobotoes button {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -152,7 +152,7 @@ main {
     color: #1c1c1d;
     font-weight: bold;
 }
-.summary-buttons button:hover {
+.sumariobotoes button:hover {
     background-color: #e0c651;
 }
 
