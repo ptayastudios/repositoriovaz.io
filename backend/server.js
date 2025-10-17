@@ -78,15 +78,41 @@ app.get("/contas/:id", async (req, res) => {
 });
 
 
-app.patch("/contas/:id", async (req, res) => {
+app.put("/contas/:id", async (req, res) => {
   const { id } = req.params;
-  const { nome, email, senha, tel, cep } = req.body;
+  const { nome, email, senha, tel, cep, desc} = req.body;
 
   try{
-    const contaAtual = await sql
+    const contaAtual = await sql`SELECT * FROM contas WHERE id_usuario = ${id}`;
     if(contaAtual === 0) return res.status(404).json({ erro: "conta nao encontrada" });
-  }catch(error){
+
+    const atual = contaAtual[0];
+
+    const novoNome = nome;
+    const novoEmail = email;
+    const novaSenha = senha;
+    const novoCep = cep;
+    const novoTelefone = tel;  
+    const novaDesc = desc;  
+
     
+    const atualizar = await sql`
+    UPDATE contas SET
+          nome = ${novoNome},
+          email = ${novoEmail},
+          senha = ${novaSenha},
+          cep = ${novoCep},
+          telefone = ${novoTelefone},
+          descricao = ${novaDesc}
+      WHERE id_usuario = ${id}
+      RETURNING *;`
+
+    return res.status(200).json({
+      conta: atualizar[0]
+    });
+  }catch(error){
+    console.error("Erro ao atualizar conta:", error);
+    return res.status(500).json({ erro: "Erro no servidor" });
   }
 });
 

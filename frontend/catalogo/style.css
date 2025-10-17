@@ -382,22 +382,30 @@ footer {
 }
 
 
-
-
-#meio{
-background-color: #f9f9f9;
+#div6esq{
 display: flex;
 flex: 1;
+justify-content: space-between;
+align-items: center;
+background-color: #f9f9f9;
+height: 20px;
+flex-direction: row;
 }
 
-#esquerda{
-  background-color: #f9f9f9;
-  display: flex;
-  flex: 2;
+#div6mid{
+display: flex;
+flex: 1;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+height: 20px;
 }
 
-#direita{
-  background-color: #f9f9f9;
-  display: flex;
-  flex: 3;
+#div6dir{
+display: flex;
+flex: 1;
+justify-content: center;
+align-items: center;
+background-color: #f9f9f9;
+height: 20px;
 }

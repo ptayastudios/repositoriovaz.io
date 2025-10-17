@@ -1,22 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login Vaz.io</title>
+    <title>Adicionar Caixa | Vaz.io Admin</title>
     <link rel="stylesheet" href="perso.css">
 </head>
 <body>
-      <header>
+    <header>
         <img id="logo" src="../../imagens/logo.png" alt="Logo Vaz.io">
-        
-  </header>
+    </header>
 
+    <main>
+        <section id="adicionar">
+            <h2>Adicionar Nova Caixa</h2>
+            <form>
+                <label for="nome">Nome da Caixa:</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Caixa Premium Redonda" required>
 
-  
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" placeholder="Descreva a caixa..." required></textarea>
 
-  <footer></footer>
+                <label for="preco">Preço (R$):</label>
+                <input type="number" id="preco" name="preco" step="0.01" placeholder="Ex: 7000,99" required>
 
+                <label for="especificacoes"> Especificações Técnicas:</label>
+                <label for="especificacoes"> Material:</label>
+                <input type="text" id="material" name="" step="0.01" placeholder="Madeira, chumbo...." required>
+                
+                <label for="especificacoes"> Cor:</label>
+                <input type="text" id="cor" name="" step="0.01" placeholder="Cinza, azul-bebê-jujuba-de-maçã-verde...." required>
 
+                <label for="especificacoes"> Modelo:</label>
+                <input type="text" id="modelo" name="" step="0.01" placeholder="Redonda, hexagonal, quarta dimensão...." required>
+
+                <label>Garantia:</label>
+                <span class="campo-fixo">Nunca.</span>
+
+                <label for="especificacoes"> Origem:</label>
+                <input type="text" id="origem" name="" step="0.01" placeholder="China, India, Qtar...." required>
+
+                <button type="submit">Adicionar ao Catálogo</button>
+            </form>
+        </section>
+    </main>
+
+    <footer></footer>
 </body>
-</html> 
+</html>
