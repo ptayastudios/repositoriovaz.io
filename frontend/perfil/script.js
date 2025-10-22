@@ -1,6 +1,8 @@
 const sair = document.querySelector("#sair");
 const atualizar = document.querySelector("#atualizar");
-
+const modal = document.getElementById("modalPerfil");
+const btn = document.getElementById("abrirModal");
+const span = document.querySelector(".fechar");
 
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -53,41 +55,39 @@ sair.addEventListener('click', ()=>{
 
 
 
-
-
-
-
-atualizar.addEventListener("click", ()=>{
+atualizar.addEventListener("click", async ()=>{
     const nome = document.querySelector("#nome");
-    const email = document.querySelector("#email");
+    const email = document.querySelector("#email-edit");
     const tel = document.querySelector("#tel");
     const cep = document.querySelector("#cep");
     const senha = document.querySelector("#senha");
 
+    try{
+        const resp = await fetch(`http://localhost:3000/contas/edit/${id}`);
+        if(!resp.ok)throw new Error('Erro ao buscar conta');
+        
+    }catch(error){
 
+    }
 
 });
 
 
 
+btn.onclick = function() {
+    modal.style.display = "flex";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+    modal.style.display = "none";
+    }
+}
 
 
 
-/*
-const modal = document.querySelector("#modalPerfil");
-const btn = document.querySelector("#editar");
-const span = document.querySelector(".fechar");
 
-    btn.addEventListener('click', ()=>{
-        modal.style.display = "flex";
-    });
-    span.addEventListener('click', ()=>{
-        modal.style.display = "none";
-    });
-    window.addEventListener('click', (event)=>{
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-    
-*/

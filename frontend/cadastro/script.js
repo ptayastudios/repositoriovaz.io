@@ -34,3 +34,4 @@ document.querySelector('#form').addEventListener('submit', async (e) => {
     alert('Erro de rede/servidor');
   }
 });
+

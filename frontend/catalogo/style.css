@@ -383,21 +383,3 @@ footer {
 
 
 
-
-#meio{
-background-color: #f9f9f9;
-display: flex;
-flex: 1;
-}
-
-#esquerda{
-  background-color: #f9f9f9;
-  display: flex;
-  flex: 2;
-}
-
-#direita{
-  background-color: #f9f9f9;
-  display: flex;
-  flex: 3;
-}

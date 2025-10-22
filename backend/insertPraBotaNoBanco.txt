@@ -1,25 +1,82 @@
-INSERT INTO produtos (nome, preco,  descricao) VALUES
-('caixa minimalista invisível', 75000.00,'você não vê, mas sente no coração, perfeita para quem aprecia o vaz.io'),
-('caixa edition plus ultra max pro', 349999.99,'a mesma caixa de sempre, só que com mais palavras no nome'),
-('caixa sustentável gourmet orgânica', 1299.90, 'feita 100% de papelão reciclado das lágrimas de consumidores conscientes'),
-('caixa hypebeast suprema', 2000000.00,  'tem um logo colado do lado, e só por isso vale o dobro da sua casa'),
-('caixa do influencer verificada', 98765.43, 'vem com um autógrafo digitalizado em Comic Sans'),
-('caixa NFT edição limitada', 999999.99,  'não entregamos a caixa física, mas você pode dizer que é dono dela na blockchain'),
-('caixa de luxo edição restrita do mc lanche feliz', 45000.00, 'sinta a nostalgia com um brinquedo classico que achamos no quintal da empregada do dono da empresa'),
-('caixa quântica premium', 777777.77,  'ela está vazia e cheia ao mesmo tempo, depende se você olha ou não'),
-('caixa do metaverso', 333333.33,  'você pode imaginar a caixa no VR'),
-('caixa vintage retrô neo-clássica', 5555.55, 'sinta a classe de um design rustico inspirado na arquitetura neo-classica, mesmo que foi fabricada nessa terça na china'),
-('caixa de cimento', 900.00, 'um design unico e rustico, fabricada sob medida imitando a textura e cheiro de cimento, com certeza não usamos o da sua calçada'),
-('caixa crepuscular dourada', 1700.00, 'Forjada no brilho efêmero do pôr do sol, sua textura lembra seda misturada a areia de deserto, carregando a memória de todos os fins de tarde que você nunca viveu. Dizem que ao abri-la, o vento sussurra segredos antigos... deve ser a sua janela aberta.'),
-('caixa das lagrimas esquecidas', 9119.99, 'Cada canto foi polido com o sal cristalizado de choros do século XIX. Sua superfície traz marcas que lembram cicatrizes, mas são só riscos de transporte. Ao tocá-la, você sente o peso das emoções humanas condensadas em papelão. Pesa 200 gramas.'),
-('caixa astral', 19000.01, 'Pintada com pigmentos inspirados nas nebulosas de Orion, ela reflete a grandeza do cosmos em cada detalhe. Um objeto que transcende a matéria... mas não passa na chuva porque desmancha.'),
-('caixa ancestral gourmet deluxe', 150000.00, 'Diz-se que foi criada pelos artesãos de uma civilização perdida, cada fibra do papelão carrega a sabedoria de milênios. O toque áspero traz uma sensação rústica de autenticidade. No fundo, foi comprada na papelaria da esquina.'),
-('caixa etérea do silêncio absoluto', 77777.77, 'Feita para aqueles que buscam paz, sua textura é quase imperceptível, como se acariciar o ar. A lenda conta que quem a abre encontra iluminação.'),
-('caixa da eternidade vintage retrô', 333333.33, 'Um artefato que já “esteve presente” em três gerações de modas passageiras. O acabamento fosco lembra os romances não correspondidos da sua adolescência. A tampa, firme como promessas que nunca foram cumpridas. No fim das contas, continua sendo... uma caixa.'),
-('caixa da efemeridade', 72000.00, 'Forjada no imaginário coletivo daquilo que chamamos de “clássico”, esta caixa carrega em suas linhas o peso do tempo e a nostalgia de uma era que talvez nunca tenha existido. Um acabamento fosco que remete a promessas feitas à meia-luz, promessas que, assim como esta caixa, parecem firmes mas desmoronam ao primeiro descuido.
+drop table produtos;
+
+create table produtos (
+	id_produto serial primary key,
+	nome varchar(150),
+	preco decimal(40,2),
+	descricao text,
+	img_url text,
+	material varchar(100),
+	cor varchar(100),
+	modelo varchar(100),
+	garantia varchar(3),
+	origem varchar(100)
+);
+
+
+INSERT INTO produtos (nome, preco, img_url, material, cor, modelo, origem, descricao) VALUES
+
+('caixa minimalista invisível', 75000.00, '../../imagens/produtos/caixaminimalistainvisivel.png', 'vento', 'transparente', 'nao', 'qualquer lugar que tenha ar', 'você não vê, mas sente no coração, perfeita para quem aprecia o vaz.io'),
+
+
+('caixa edition plus ultra max pro', 34999.99, '../../imagens/produtos/caixaeditionplusultramaxpro.png', 'papelao refinado do alasca', 'marrom pinheiro queimado', '32gb de ram, nvme512gb, rtx5090, ryzen 7 7700x', 'cavernas luminosas do saara', 'a mesma caixa de sempre, só que com mais palavras no nome'),
+
+
+('caixa sustentável gourmet orgânica', 1299.90, '../../imagens/produtos/caixasustentavelgourmetorganica.png', 'papelao vegano', 'vegano', 'vegano', 'veganos', 'feita 100% de papelão reciclado das lágrimas de consumidores conscientes'),
+
+
+('caixa hypebeast suprema', 20000.00, '../../imagens/produtos/caixahyperblastsuprema.png', 'papelao', 'cor de caixa', 'caixa', 'papelaria da esquina', 'tem um logo colado do lado, e só por isso vale o dobro da sua casa'),
+
+
+('caixa do influencer verificada', 98765.43, '../../imagens/produtos/caixadoinfluencerverificada.png', 'papelao', 'sim', 'o mesmo de sempre', 'papelaria da esquina', 'vem com um autógrafo digitalizado em Comic Sans'),
+
+
+('caixa NFT edição limitada', 999999.99, '../../imagens/produtos/caixanftedicaolimitada.png', '-----', '-----', 'digital', 'pc do faxineiro', 'não entregamos a caixa física, mas você pode dizer que é dono dela na blockchain'),
+
+
+('caixa de luxo edição restrita do mc lanche feliz', 45000.00, '../../imagens/produtos/caixadeluxoedicaorestritadomclanchefeliz.png', 'papelao fininho do mcdonalds', 'vermelho', 'mclanche feliz', 'mcDonalds', 'sinta a nostalgia com um brinquedo classico que achamos no quintal da empregada do dono da empresa'),
+
+
+('caixa quântica premium', 777777.77, '../../imagens/produtos/caixaquanticapremium.png', 'papelao ou ar, depende se vc olha ou nao', 'tambem depende', 'depende', 'depende tmb',  'ela está vazia e cheia ao mesmo tempo, depende se você olha ou não'),
+
+
+('caixa do metaverso', 333333.33, '../../imagens/produtos/caixadometaverso.png', '-----', 'personalizavel', '-----', 'pc do faxineiro', 'você pode imaginar a caixa no VR'),
+
+
+('caixa vintage retrô neo-clássica', 5555.55, '../../imagens/produtos/caixavintageretroneoclassica.png', 'papelao envelhecido texturizado', 'marrom pastel queimado com notas de cinza cimento', 'caixa neo-classica', 'china', 'sinta a classe de um design rustico inspirado na arquitetura neo-classica, mesmo que foi fabricada nessa terça na china'),
+
+
+('caixa de cimento', 900.00, '../../imagens/produtos/caixadecimento.png', 'cimento', 'cimento', 'de cimento', 'cimento da obra aq do lado', 'um design unico e rustico, fabricada sob medida imitando a textura e cheiro de cimento, com certeza não usamos o da sua calçada'),
+
+
+('caixa crepuscular dourada', 1700.00, '../../imagens/produtos/caixacrepusculardourada.png', 'NOSSO ouro 12 quilates refinado em portugal', 'dourado', 'crepuscular', 'portugal', 'Forjada no brilho efêmero do pôr do sol, sua textura lembra seda misturada a areia de deserto, carregando a memória de todos os fins de tarde que você nunca viveu. Dizem que ao abri-la, o vento sussurra segredos antigos... deve ser a sua janela aberta.'),
+
+
+('caixa das lagrimas esquecidas', 9119.99, '../../imagens/produtos/caixadaslagrimasesquecidas.png', 'sal de laagrimas', 'azul lagrimas secas', 'sim', 'talvez', 'Cada canto foi polido com o sal cristalizado de choros do século XIX. Sua superfície traz marcas que lembram cicatrizes, mas são só riscos de transporte. Ao tocá-la, você sente o peso das emoções humanas condensadas em papelão. Pesa 200 gramas.'),
+
+
+('caixa astral', 19000.01, '../../imagens/produtos/caixaastral.png', 'papelao do cosmos', 'azul galaxia', 'caixa', 'mercadinho do bairro',  'Pintada com pigmentos inspirados nas nebulosas de Orion, ela reflete a grandeza do cosmos em cada detalhe. Um objeto que transcende a matéria... mas não passa na chuva porque desmancha.'),
+
+
+('caixa ancestral gourmet deluxe', 150000.00, '../../imagens/produtos/caixaastralgourmetdeluxe.png', 'papelao', 'cor de caixa', 'caixa', 'papelaria da esquina',  'Diz-se que foi criada pelos artesãos de uma civilização perdida, cada fibra do papelão carrega a sabedoria de milênios. O toque áspero traz uma sensação rústica de autenticidade. No fundo, foi comprada na papelaria da esquina.'),
+
+
+('caixa etérea do silêncio absoluto', 77777.77, '../../imagens/produtos/caixadosilencioabsoluto.png', '-----', '-----', '-----', '-----',  'Feita para aqueles que buscam paz, sua textura é quase imperceptível, como se acariciar o ar. A lenda conta que quem a abre encontra iluminação.'),
+
+
+('caixa confusa', 72000.00, '../../imagens/produtos/caixaconfusa.png', 'papelao', 'cor de papelao', 'caixa', 'tava na rua ai e eu peguei', 'Forjada no imaginário coletivo daquilo que chamamos de “clássico”, esta caixa carrega em suas linhas o peso do tempo e a nostalgia de uma era que talvez nunca tenha existido. Um acabamento fosco que remete a promessas feitas à meia-luz, promessas que, assim como esta caixa, parecem firmes mas desmoronam ao primeiro descuido.
 
 pois, nu fundo, é sobre isso, você olha para ela e sente que existe algo mais. Que talvez, se insistir um pouco, se encaixar direito a tampa, finalmente vai funcionar. Mas não funciona. Nunca funcionou. A caixa não foi feita para você. Ela nunca esteve quebrada, nem confusa, nem “precisando de tempo”. Ela simplesmente não se encaixava. E isso não é culpa sua.
 
 No fim das contas, não é que ela tenha perdido o brilho. É que ela nunca quis brilhar pra você. E talvez seja isso que dói. Mas também é isso que liberta.
 
-Produto exclusivo, edição limitada. Sem direito a devolução.');
+Produto exclusivo, edição limitada. Sem direito a devolução.'),
+
+
+('combo de caixas', 90100.90, '../../imagens/produtos/combodecaixa.png', 'papelao x5', 'cor de papelao x5', 'combo', 'tava na rua', 'um imperdivel combo de 5 caixas incriveis!! leve 5 e pague 13!!! essa parte da descricao ta aq so pra parecer que tem mais oq falar do produto e ficar visualmente legal no site, entao, ingnora esse pedaco e volta a trabalhar pq eu sei q vc tem muita coisa pra fazer krl, agnt tem so ate o final de novembro, VAI TRABALHAR, DESGRACA!!!'),
+
+
+('caixa premium', 777777777777777777777777777777777777777.77, '../../imagens/produtos/caixapremium.png', 'madeira dos pinheiros do saara', 'marrom e transparente', 'premium', 'geleiras do saara', 'Caixa realmente muito premium. Fabricada com madeira dos pinheiros do deserto do saara e com vidro temperado que imita plastico molenga(só imita mesmo).'),
+
+
+('caixa da sua vo', 90.00, '../../imagens/produtos/caixadasuavo.png', 'ceramica', 'bege', 'caixa de bugigangas', 'casa da sua vo', 'feita inteiramente com as cinzas da sua vo paterna, agora, essa parte da descricao ta aq so pra parecer mais bonito no site, como se tivesse algo legal pra falar');
