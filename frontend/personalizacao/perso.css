@@ -1,27 +1,23 @@
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
 }
-@font-face {
-  font-family: 'aliens and cows';
-  src: url('../fontes/aliens\ and\ cows_trial.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+
+@font-face { 
+    font-family: 'aliens and cows'; 
+    src: url('../fontes/aliens\ and\ cows_trial.ttf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal; 
 }
 
 body {
-     background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
-            radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%),
-            #d2d2d5;
+    background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%), radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%), #d2d2d5;
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-   
 }
-
-
 
 header {
     background: #1c1c1d;
@@ -30,8 +26,13 @@ header {
     grid-template-columns: 150px 1fr;
     align-items: end;
     border-bottom: 10px solid #C9A441;
-
 }
+
+#logo {
+    width: 750px;
+    height: 80px;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -40,77 +41,82 @@ main {
     margin-top: -115px;
 }
 
-#login-box {
-    background: #0c054a;
+#adicionar {
+    background: #1c1c1d;
     padding: 30px;
-    border-radius: 5px;
-    text-align: center;
+    border-radius: 10px;
+    width: 40%;
+    min-width: 350px;
     color: #C9A441;
-    height: 90%;
-    width: 30%;
-    
 }
 
-#login-box h2 {
+  .campo-fixo {
+    display: inline-block;
+    border-radius: 4px;
+    background-color:#d3d3d3;
+    color: #555;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #C9A441;
+  }
+
+#adicionar h2 {
     font-size: 26px;
     margin-bottom: 20px;
-    letter-spacing: 5px;
+    text-align: center;
+    letter-spacing: 3px;
 }
 
-#login-box label {
+#adicionar label {
     display: block;
-    text-align: left;
-    margin: 10px 0 5px;
+    margin-top: 12px;
+    font-weight: bold;
     font-size: 14px;
 }
 
-#login-box input {
+#adicionar input,
+#adicionar textarea {
     width: 100%;
     padding: 10px;
+    margin-top: 5px;
     border: 2px solid #C9A441;
     border-radius: 5px;
     background: #d3d3d3;
-    margin-bottom: 15px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
-.links {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+#adicionar textarea {
+    resize: vertical;
+    min-height: 80px;
 }
 
-.links a {
-    color: #C9A441;
-    font-size: 13px;
-    text-decoration: none;
-}
-
-button {
+#adicionar button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
     background: #C9A441;
     color: #0a0040;
     border: none;
-    padding: 10px 20px;
     font-size: 18px;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
+#adicionar button:hover {
     background: #ffa500;
 }
+
 
 footer {
     background: #1c1c1d;
     border-top: 5px solid #C9A441;
     height: 40px;
     width: 100%;
-    position:fixed;
+    position: fixed;
     bottom: 0;
     left: 0;
 }
 
-#logo {
-    width: 750px;
-    height: 80px;
-}
