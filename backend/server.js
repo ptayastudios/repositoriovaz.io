@@ -38,21 +38,21 @@ app.get("/contas", async (req,res) => {
 
 app.post('/contas', async (req, res) => {
   try {
-    let { nome, email, senha, foto_url } = req.body;
+    let { nome, email, senha } = req.body;
     if (!nome || !email || !senha) {
       return res.status(400).json({ erro: 'nome, email e senha são obrigatórios' });
     }
     nome = String(nome).trim();
     email = String(email).trim().toLowerCase();
-    foto_url = foto_url ? String(foto_url).trim() : null;
+    //foto_url = foto_url ? String(foto_url).trim() : null;
 
-    const sql = `
-      INSERT INTO contas (nome, email, senha, img_url)
-      VALUES ($1, $2, $3, $4)
-      RETURNING id_usuario, nome, email, img_url
+    const resultado = await sql`
+      INSERT INTO contas (nome, email, senha)
+      VALUES (${nome}, ${email}, ${senha})
+      RETURNING id_usuario, nome, email, senha
     `;
-    const { rows } = await sql`sql, [nome, email, senha, foto_url]`;
-    return res.status(201).json(rows[0]); 
+  
+    return res.status(201).json(resultado[0]); 
   } catch (e) {
     if (e.code === '23505') { 
       return res.status(409).json({ erro: 'email já cadastrado' });
@@ -61,7 +61,6 @@ app.post('/contas', async (req, res) => {
     return res.status(500).json({ erro: 'erro no servidor' });
   }
 });
-
 
 app.get("/contas/:id", async (req, res) => {
   const { id } = req.params;
@@ -80,20 +79,20 @@ app.get("/contas/:id", async (req, res) => {
 
 app.put("/contas/:id", async (req, res) => {
   const { id } = req.params;
-  const { nome, email, senha, tel, cep, desc} = req.body;
+  const { nome, email, senha} = req.body;
 
   try{
-    const contaAtual = await sql`SELECT * FROM contas WHERE id_usuario = ${id}`;
-    if(contaAtual === 0) return res.status(404).json({ erro: "conta nao encontrada" });
+    // const contaAtual = await sql`SELECT * FROM contas WHERE id_usuario = ${ id }`;
+    // if(contaAtual === 0) return res.status(404).json({ erro: "conta nao encontrada" });
 
-    const atual = contaAtual[0];
+    // const atual = contaAtual[0];
 
     const novoNome = nome;
     const novoEmail = email;
     const novaSenha = senha;
-    const novoCep = cep;
-    const novoTelefone = tel;  
-    const novaDesc = desc;  
+    //const novoCep = cep;
+    //const novoTelefone = tel;  
+    //const novaDesc = desc;  
 
     
     const atualizar = await sql`
@@ -116,6 +115,34 @@ app.put("/contas/:id", async (req, res) => {
   }
 });
 
+
+app.post('/produtos', async (req, res) => {
+  try {
+    let { nome, descicao, preco, material, cor, modelo, origem } = req.body;
+    if (!nome || !descicao || !preco || !material || !cor || !modelo || !origem) {
+      return res.status(400).json({ erro: 'todos os campos são obrigatorios' });
+    }
+    nome = String(nome).trim();
+    descricao = String(descicao).trim();
+    preco = String(preco).trim();
+    material = String(material).trim();
+    cor = String(cor).trim();
+    modelo = String(modelo).trim();
+    origem = String(origem).trim();
+    
+
+    const resultado = await sql`
+      INSERT INTO contas (nome, descricao, preco, material, cor, modelo, origem)
+      VALUES (${nome}, ${descicao}, ${preco}, ${material}, ${cor}, ${modelo}, ${origem})
+      RETURNING nome, descricao, preco, material, cor, modelo, origem
+    `;
+  
+    return res.status(201).json(resultado[0]); 
+  } catch (e) {
+    console.error('erro ao cadastrar produto', e);
+    return res.status(500).json({ erro: 'erro no servidor' });
+  }
+});
 
 
 

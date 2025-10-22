@@ -80,3 +80,11 @@ Produto exclusivo, edição limitada. Sem direito a devolução.'),
 
 
 ('caixa da sua vo', 90.00, '../../imagens/produtos/caixadasuavo.png', 'ceramica', 'bege', 'caixa de bugigangas', 'casa da sua vo', 'feita inteiramente com as cinzas da sua vo paterna, agora, essa parte da descricao ta aq so pra parecer mais bonito no site, como se tivesse algo legal pra falar');
+
+
+
+
+
+
+
+cria a rota de post pra produtos

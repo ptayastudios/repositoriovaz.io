@@ -1,17 +1,16 @@
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
 }
 
+html,
 body {
-     background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
-            radial-gradient(circle at 20% 70%, rgba(98, 98, 99, 0.871), transparent 80%),
-            #dddde0;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%), radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%), #d2d2d5;
+    
 }
 
 header {

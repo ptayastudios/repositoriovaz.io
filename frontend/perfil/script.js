@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         const resp = await fetch(`http://localhost:3000/contas/${id}`);
-        if (!resp.ok) throw new Error('Erro ao buscar conta');
+        if (!resp.ok) throw new Error('Erro ao buscar conta'); 
 
         const conta = await resp.json();
 
@@ -63,7 +63,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const class_ = document.querySelector('.acoaes');
 
             admButton.id = 'admB';
+            admButton.addEventListener('click', ()=>{
+                window.location.href = '../personalizacao/personalizacao.html'
+            })
+
             admButton.textContent = 'adicionar produto';
+                
+            
             class_.appendChild(admButton);
         }
     } catch (err) {

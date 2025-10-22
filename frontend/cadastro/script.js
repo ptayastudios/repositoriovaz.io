@@ -6,7 +6,7 @@ document.querySelector('#form').addEventListener('submit', async (e) => {
     nome: document.querySelector('#nome').value.trim(),
     email: document.querySelector('#email').value.trim().toLowerCase(),
     senha: document.querySelector('#password').value,
-    foto_url: document.querySelector('#foto_url').value.trim() || null,
+
   };
 
   try {
@@ -26,7 +26,7 @@ document.querySelector('#form').addEventListener('submit', async (e) => {
 
     localStorage.setItem('id_salvo', user.id_usuario);
     localStorage.setItem('userNome', user.nome || '');
-    localStorage.setItem('userFoto', user.foto_url || '');
+    //localStorage.setItem('userFoto', user.foto_url || '');
 
     window.location.href = '../catalogo/index.html';
   } catch (err) {

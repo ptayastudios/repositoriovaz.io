@@ -1,9 +1,20 @@
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    outline: 0;
 }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  
+  background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%), radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%), #d2d2d5;
+   
+}
+
 @font-face {
   font-family: 'aliens and cows';
   src: url('../fontes/aliens\ and\ cows_trial.ttf') format('truetype');
@@ -11,14 +22,7 @@
   font-style: normal;
 }
 
-main {
-  background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
-              radial-gradient(circle at 20% 70%, rgba(98, 98, 99, 0.871), transparent 80%),
-              #dddde0;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
 
-}
 
 
 header {
@@ -86,7 +90,7 @@ header.header--pinned {
 #div4{ background-color: #1c1c1d; width: 100%; height: 20vh; display: flex; align-items: center; justify-content: center; font-size: 35px; color: #3d3d41; box-shadow: 0 4px 16px rgba(0,0,0,0.1); border-bottom: #C9A441 solid 5px;}
 #div4 h3{ font-family: 'aliens and cows', sans-serif; font-weight: 150; color: #C9A441;}
 #div5{height: 90vh; background:  radial-gradient(circle at 20% 70%, rgba(36, 36, 39, 0.508), transparent 80%), rgba(63, 64, 66, 0.508);box-shadow: 0 4px 16px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: end;}
-#div6{ height: 100vh; }
+#div6{ height: 100vh; display: flex; justify-content: start; flex-direction: row; align-items: center; }
 
 
 
@@ -382,23 +386,30 @@ footer {
 }
 
 
+
+
+
+
 #div6esq{
 display: flex;
 flex: 1;
-justify-content: space-between;
+justify-content: center;
 align-items: center;
-background-color: #f9f9f9;
-height: 20px;
-flex-direction: row;
+background-color: #f7f3ef;
+height: 80%;
+width: 80%;
 }
+
 
 #div6mid{
 display: flex;
 flex: 1;
 justify-content: center;
 align-items: center;
-background-color: #f9f9f9;
-height: 20px;
+background-color: #f7f3ef;
+height: 80%;
+width: 80%;
+margin: 50px;
 }
 
 #div6dir{
@@ -406,6 +417,20 @@ display: flex;
 flex: 1;
 justify-content: center;
 align-items: center;
-background-color: #f9f9f9;
-height: 20px;
+background-color: #f7f3ef;
+height: 80%;
+width: 80%;
 }
+
+.product-cardDiv6{
+  width: 50%;
+  aspect-ratio: 15/6;
+  background-color: #f7f3ef;
+  margin: 5px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+
+

@@ -1,10 +1,18 @@
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
 }
-@font-face {
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+  background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%), radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%), #d2d2d5;
+    display: grid;
+}@font-face {
   font-family: 'aliens and cows';
   src: url('../fontes/aliens\ and\ cows_trial.ttf') format('truetype');
   font-weight: normal;
