@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login Vaz.io</title>
-    <link rel="stylesheet" href="pesquisa.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaz.io — Catálogo de Produtos</title>
+  <link rel="stylesheet" href="pesquisa.css">
 </head>
 <body>
+  <div id="root">
     <header>
-        <img id="logo" src="../../imagens/logo.png" alt="Logo Vaz.io">
+      <img id="logo" src="../../imagens/logo.png" alt="Logo Vaz.io">
+      <input type="search" id="search" placeholder="Pesquisar produtos...">
+      <div id="login-icon">
+        <img src="../../imagens/perfil.png" id="avatar" alt="Perfil">
+      </div>
     </header>
 
-  
+    <div id="content">
 
-  <footer></footer>
+      <div id="canto"></div>
+      <div id="produtosDiv"></div>
 
+    </div>
 
+    <footer></footer>
+  </div>
+
+  <script src="pesquisa.js"></script>
 </body>
-</html> 
+</html>

@@ -1,26 +1,35 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: monospace;
 }
-@font-face {
-  font-family: 'aliens and cows';
-  src: url('../fontes/aliens\ and\ cows_trial.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 body {
-     background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
-            radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%),
-            #d2d2d5;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-   
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
+              radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%),
+              #d2d2d5;
+  display: grid;
 }
 
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+@font-face { 
+  font-family: 'aliens and cows'; 
+  src: url('../fontes/aliens and cows_trial.ttf') format('truetype'); 
+  font-weight: normal; 
+  font-style: normal; 
+}
 
 
 header {
@@ -30,21 +39,125 @@ header {
     grid-template-columns: 150px 1fr;
     align-items: end;
     border-bottom: 10px solid #C9A441;
+    position: relative;
+    padding: 8px 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: transform 300ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms;
+    will-change: transform;
+}
 
+header.header--hidden {
+  transform: translateY(-100%);
+  box-shadow: none;
+}
+
+
+header.header--pinned {
+  transform: translateY(0);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+#logo { width: 750px; height: 80px; }
+
+#search{ width: 70%; margin: 5px; border-radius: 30px; }
+
+#login-icon {
+  border-radius: 100%;
+  background-color: #C9A441;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+#login-icon:hover {
+  background-color: #e0c651;
+}
+
+#avatar {
+  width: 90%;
+  height: 90%;
+  border-radius: 100%;
+  border: 3px #1c1c1d solid;
+}
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+}
+
+
+.card {
+  background: #fff;
+  border: 2px solid #C9A441;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  width: 250px;
+  text-align: center;
+  overflow: hidden;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card img {
+  width: 10%;
+  object-fit: cover;
+}
+
+.card h5 {
+  font-size: 1.1rem;
+  margin: 10px 0 5px 0;
+}
+
+.card h6 {
+  color: #C9A441;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 
 footer {
-    background: #1c1c1d;
-    border-top: 5px solid #C9A441;
-    height: 40px;
-    width: 100%;
-    position:fixed;
-    bottom: 0;
-    left: 0;
+  background: #1c1c1d;
+  border-top: 5px solid #C9A441;
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
-#logo {
-    width: 750px;
-    height: 80px;
+
+
+
+
+
+
+
+#canto{
+  height: 100%;
+  flex: 1;
+  background-color: #1c1c1d4c;
+  border-right: #1c1c1d solid 3px;
+}
+
+#produtosDiv{
+  height: 100%;
+  flex: 6;
 }

@@ -1,17 +1,17 @@
 const add = document.querySelector('#submitButton');
 
 add.addEventListener('click', async (e)=>{
-    e.preventDefault();
-   // if(nome == null || ! descricao == null || preco == null || material == null || cor == null || modelo == null || origem == null) alert('todos os campos são obrigatorios');
-    //else{
+        e.preventDefault();
+        
+
         const payload = {
-            nome: document.querySelector('#nome'),
-            descricao: document.querySelector('#descricao'),
-            preco: document.querySelector('#preco'),
-            material: document.querySelector('#material'),
-            cor: document.querySelector('#cor'),
-            modelo: document.querySelector('#modelo'),
-            origem: document.querySelector('#origem')
+            nome_ : document.querySelector('#nome').value,
+            descricao_ : document.querySelector('#descricao').value,
+            preco_ : document.querySelector('#preco').value,
+            material_ : document.querySelector('#material').value,
+            cor_ : document.querySelector('#cor').value,
+            modelo_ : document.querySelector('#modelo').value,
+            origem_ : document.querySelector('#origem').value
         };
 
         try{
@@ -27,10 +27,11 @@ add.addEventListener('click', async (e)=>{
                 return;
             }
            const produto_add = await resp.json(); 
-           alert("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!!!!!!!!!!!!!!!!!!!!!!")
+           alert('produto adicionado com sucesso');
+
         } catch (err) {
             console.error(err);
             alert('Erro de rede/servidor');
         }
-    //  }
+    
 });

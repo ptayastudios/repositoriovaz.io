@@ -9,7 +9,6 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-size: 62.5%;
   background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%), radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%), #d2d2d5;
     display: grid;
 }
@@ -34,6 +33,7 @@ header {
     width: 750px;
     height: 80px;
 }
+
 
 main {
     display: flex;
@@ -65,10 +65,12 @@ main {
   }
 
 #adicionar h2 {
-    font-size: 26px;
+    font-size: 45px;
     margin-bottom: 20px;
     text-align: center;
     letter-spacing: 3px;
+    font-family: 'aliens and cows', monospace;
+    font-weight: 100;
 }
 
 #adicionar label {

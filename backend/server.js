@@ -43,6 +43,7 @@ app.post('/contas', async (req, res) => {
       return res.status(400).json({ erro: 'nome, email e senha são obrigatórios' });
     }
     nome = String(nome).trim();
+    senha = String(senha).trim();
     email = String(email).trim().toLowerCase();
     //foto_url = foto_url ? String(foto_url).trim() : null;
 
@@ -118,22 +119,22 @@ app.put("/contas/:id", async (req, res) => {
 
 app.post('/produtos', async (req, res) => {
   try {
-    let { nome, descicao, preco, material, cor, modelo, origem } = req.body;
-    if (!nome || !descicao || !preco || !material || !cor || !modelo || !origem) {
+    let { nome, descricao, preco, material, cor, modelo, origem } = req.body;
+    if (!nome || !descricao || !preco || !material || !cor || !modelo || !origem) {
       return res.status(400).json({ erro: 'todos os campos são obrigatorios' });
     }
-    nome = String(nome).trim();
-    descricao = String(descicao).trim();
-    preco = String(preco).trim();
-    material = String(material).trim();
-    cor = String(cor).trim();
-    modelo = String(modelo).trim();
-    origem = String(origem).trim();
+    let nome_ = nome;
+    let descricao_ = descricao;
+    let preco_ = Number(preco);
+    let material_ = material;
+    let cor_ = cor;
+    let modelo_ = modelo;
+    let origem_ = origem;
     
 
     const resultado = await sql`
-      INSERT INTO contas (nome, descricao, preco, material, cor, modelo, origem)
-      VALUES (${nome}, ${descicao}, ${preco}, ${material}, ${cor}, ${modelo}, ${origem})
+      INSERT INTO produtos (nome, descricao, preco, material, cor, modelo, origem)
+      VALUES (${nome_}, ${descricao_}, ${preco_}, ${material_}, ${cor_}, ${modelo_}, ${origem_})
       RETURNING nome, descricao, preco, material, cor, modelo, origem
     `;
   
