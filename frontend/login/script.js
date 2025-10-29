@@ -14,7 +14,6 @@ form.addEventListener('submit', async (e) => {
 
     if (conta) {
       localStorage.setItem('id_salvo', conta.id_usuario);
-      //alert(localStorage.getItem('id_salvo'));
       window.location.href = '../catalogo/index.html';
     } else {
       alert('Credenciais inválidas');

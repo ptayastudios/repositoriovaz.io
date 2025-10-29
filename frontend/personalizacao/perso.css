@@ -34,23 +34,26 @@ header {
     height: 80px;
 }
 
-
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 70px;
-    margin-top: -60px;
-   
+    padding: 50px 20px;
 }
 
-#adicionar {
+#container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+#adicionar{
+    text-align: center;
     background: #1c1c1d;
     padding: 30px;
-    border-radius: 10px;
-    width: 40%;
-    min-width: 350px;
+    border-radius: 15px;
     color: #C9A441;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
   .campo-fixo {
@@ -113,6 +116,95 @@ main {
 #adicionar button:hover {
     background: #ffa500;
 }
+
+#lista{
+    background: #1c1c1d;
+    padding: 30px;
+    border-radius: 15px;
+    color: #C9A441;
+}
+
+.grupo-input {
+    justify-content:flex-end;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.grupo-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.grupo-input button {
+  padding: 8px 12px;
+  border: none;
+  background-color:#C9A441;
+  color: black;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.grupo-input button:hover {
+  background-color: #ffa500;
+}
+
+.botao-editar, .botao-salvar, .botao-deletar {
+  padding: 5px 8px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+}
+
+.botao-editar {
+  background-color: #2196F3;
+}
+
+.botao-editar:hover {
+  background-color: #1976D2;
+}
+
+.botao-salvar {
+  background-color: #4CAF50;
+}
+
+.botao-salvar:hover {
+  background-color: #388E3C;
+}
+
+.botao-deletar {
+  background-color: #f44336;
+}
+
+.botao-deletar:hover {
+  background-color: #d32f2f;
+}
+
+#caixas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#caixas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+#caixas span {
+  flex: 1;
+  text-align: left;
+}
+   
 
 
 footer {

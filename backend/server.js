@@ -6,11 +6,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/produtos", async (req,res) => {
+app.get("/produtos/:pesquisa", async (req,res) => {
+  const { pesquisa } = req.body;
   try{
 
-    const resultado = await sql`select * from produtos`;
-    return res.status(200).json(resultado);
+    if(pesquisa != undefined){
+
+      resultado = await sql`
+        select * from produtos
+        where lower(nome) like ${' pesquisa '}
+      `;
+
+    }else{
+      console.log('teste');
+      const resultado = await sql`select * from produtos`;
+      return res.status(200).json(resultado);
+    }
 
   }catch (error){
 
