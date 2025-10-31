@@ -5,17 +5,18 @@ add.addEventListener('click', async (e)=>{
         
 
         const payload = {
-            nome_ : document.querySelector('#nome').value,
-            descricao_ : document.querySelector('#descricao').value,
-            preco_ : document.querySelector('#preco').value,
-            material_ : document.querySelector('#material').value,
-            cor_ : document.querySelector('#cor').value,
-            modelo_ : document.querySelector('#modelo').value,
-            origem_ : document.querySelector('#origem').value
+            nome : document.querySelector('#nome').value,
+            descricao : document.querySelector('#descricao').value,
+            preco : document.querySelector('#preco').value,
+            material : document.querySelector('#material').value,
+            cor : document.querySelector('#cor').value,
+            modelo : document.querySelector('#modelo').value,
+            origem : document.querySelector('#origem').value
+ 
         };
 
         try{
-            const resp = await fetch(`http://localhost:3000/produtos`, {
+            const resp = await fetch(`http://localhost:3000/produtosP`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),

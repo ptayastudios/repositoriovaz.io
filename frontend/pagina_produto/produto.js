@@ -1,6 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
+const botao_comprar = document.querySelector('.comprabotao');
 const img = document.querySelector('#img');
 const nome = document.querySelector('#nome');
 const preco = document.querySelector('#preco');
@@ -34,6 +35,35 @@ document.addEventListener('DOMContentLoaded', async ()=>{
         console.error('teupaieviado', error);
     }
 });
+
+
+
+botao_comprar.addEventListener("click", async () => {
+    const id_user = localStorage.getItem("id_salvo");
+    if (id_user) {
+      const resposta = await fetch("http://localhost:3000/comprar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          total: produto.preco,
+          id_produto: produto.id,
+          id_user: id_user,
+        }),
+      });
+      if (resposta.status == 201) {
+        alert("Parabens pela compra!");
+      }
+    } else {
+      window.location.href = "../Login/login.html";
+    }
+  });
+
+
+
+  
+
 
 
 /*

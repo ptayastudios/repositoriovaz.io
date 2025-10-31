@@ -36,7 +36,7 @@ if(id != null ){
         imgHeader.src = '../../imagens/perfil.png';
     }
     });
-}else{alert("id == null");}
+}
 
 
 

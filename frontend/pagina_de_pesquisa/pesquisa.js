@@ -12,7 +12,10 @@ login.addEventListener('click', ()=>{
 });
 
 function renderizarProdutos(produtos) {
+  console.log(produtos);
+
   const div_content = document.querySelector("#produtosDiv");
+  div_content.innerHTML = '';
   //pesquisa.value = pesq;
 
   try {
@@ -24,7 +27,7 @@ function renderizarProdutos(produtos) {
 
     produtos.forEach((p) => {
       const link = document.createElement("a");
-      link.href = `../Detalhes/detalhes.html?id=${p.id}`;
+      link.href = `../Detalhes/detalhes.html?id=${p.id_produto}`;
       link.target = "_blank";
       link.classList.add("card");
 
@@ -64,9 +67,18 @@ function renderizarProdutos(produtos) {
 
 async function buscarProdutos(pesquisaV) {
   try {
-    const resp = await fetch(`http://localhost:3000/produtos/pesquisa:${pesquisaV}`);
-    if (!resp.ok) throw new Error('Erro ao buscar produtos');
+    console.log(pesquisaV);
+    
+    const resp = await fetch(`http://localhost:3000/search/${pesquisaV}`);
+    if (!resp.ok) throw new Error(`Erro ao buscar produto ${pesquisaV}`);
+
+    if(pesquisaV == null || pesquisaV == undefined){
+      const resp = await fetch(`http://localhost:3000/produtos}`);
+      if (!resp.ok) throw new Error(`Erro ao buscar produto}`);
+    }
+    
     const produtos = await resp.json();
+
     renderizarProdutos(produtos);
   } catch (e) {
     console.error('Erro ao carregar produtos:', e);
@@ -80,6 +92,5 @@ document.addEventListener('DOMContentLoaded', () => buscarProdutos());
 pesquisa.addEventListener('input', (e) => {
 
     e.preventDefault();
-    buscarProdutos(pesquisa.value.trim());
-  
+    buscarProdutos(pesquisa.value.trim());  
 });

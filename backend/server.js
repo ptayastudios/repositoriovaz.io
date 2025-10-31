@@ -6,20 +6,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/produtos/:pesquisa", async (req,res) => {
-  const { pesquisa } = req.body;
+app.get("/search/:pesquisa", async (req,res) => {
+  const { pesquisa } = req.params;
   try{
 
-    if(pesquisa != undefined){
-
-      resultado = await sql`
-        select * from produtos
-        where lower(nome) like ${' pesquisa '}
+    if(pesquisa !== ''){
+      const resultado = await sql`
+        SELECT * FROM produtos
+        WHERE LOWER(nome) LIKE ${'%' + pesquisa.toLowerCase() + '%'}
       `;
-
-    }else{
-      console.log('teste');
-      const resultado = await sql`select * from produtos`;
       return res.status(200).json(resultado);
     }
 
@@ -31,20 +26,51 @@ app.get("/produtos/:pesquisa", async (req,res) => {
   }
 }); 
 
-
-app.get("/contas", async (req,res) => {
+app.get("/produtos", async (req,res) => {
   try{
-
-    const contas_ = await sql`select * from contas`;
-    return res.status(200).json(contas_);
-
+      const resultado = await sql`SELECT * FROM produtos`;
+      return res.status(200).json(resultado);
   }catch (error){
-
     console.error("erro ao buscar produtos", error);
     return res.status(500).json({ erro: "erro no servidor" });
-
   }
-}); 
+});
+
+
+app.post("/login", async (req, res) => {
+  try {
+    const { email, senha } = req.body;
+
+    if (!email || !senha) {
+      return res.status(400).json({ erro: "Email e senha são obrigatórios" });
+    }
+
+    const resultado = await sql`
+      select * from contas where email = ${email.toLowerCase()}
+    `;
+
+    if (resultado.length === 0) {
+      return res.status(401).json({ erro: "Email ou senha inválidos" });
+    }
+
+    const conta = resultado[0];
+
+    if (conta.senha !== senha) {
+      return res.status(401).json({ erro: "Email ou senha inválidos" });
+    }
+
+    res.status(200).json({
+      id_usuario: conta.id_usuario,
+      nome: conta.nome,
+      email: conta.email,
+      nivel: conta.nivel
+    });
+  } catch (error) {
+    console.error("Erro ao autenticar:", error);
+    res.status(500).json({ erro: "Erro no servidor" });
+  }
+});
+
 
 
 app.post('/contas', async (req, res) => {
@@ -128,19 +154,19 @@ app.put("/contas/:id", async (req, res) => {
 });
 
 
-app.post('/produtos', async (req, res) => {
+app.post('/produtosP', async (req, res) => {
   try {
     let { nome, descricao, preco, material, cor, modelo, origem } = req.body;
     if (!nome || !descricao || !preco || !material || !cor || !modelo || !origem) {
       return res.status(400).json({ erro: 'todos os campos são obrigatorios' });
     }
-    let nome_ = nome;
-    let descricao_ = descricao;
-    let preco_ = Number(preco);
-    let material_ = material;
-    let cor_ = cor;
-    let modelo_ = modelo;
-    let origem_ = origem;
+    let nome_ = nome || 'bah';
+    let descricao_ = descricao || 'bah';
+    let preco_ = Number(preco) || 1;
+    let material_ = material || 'bah';
+    let cor_ = cor || 'bah';
+    let modelo_ = modelo || 'bah';
+    let origem_ = origem || 'bah';
     
 
     const resultado = await sql`
@@ -179,6 +205,15 @@ app.get("/produtos/:id", async (req, res) => {
 });
 
 
+
+app.post("/comprar", async (req, res) => {
+  const { total, id_produto, id_user } = req.body;
+
+  const id_venda =
+    await sql`insert into vendas(total, data_venda, id_user, id_produto) values(${total},${new Date()},${id_user},${id_produto}) returning id`;
+
+  return res.status(201).json("Compra feita!");
+});
 
 
 

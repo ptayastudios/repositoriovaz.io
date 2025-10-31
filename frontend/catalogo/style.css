@@ -120,6 +120,15 @@ a.product-card:focus-visible {
   outline-offset: 4px;
 }
 
+.product-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.product-card{
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
 
 
 #produto1.product-card {
@@ -433,6 +442,7 @@ width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 #plano2{
   height: 70%;
@@ -443,6 +453,7 @@ width: 100%;
 
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 #plano3{
   height: 70%;
@@ -452,6 +463,27 @@ width: 100%;
 
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#plano1:hover {
+  transform: scale(1.05); /* aumenta levemente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* cria destaque */
+  z-index: 10; /* fica por cima de outros elementos */
+}
+
+
+#plano2:hover {
+  transform: scale(1.05); /* aumenta levemente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* cria destaque */
+  z-index: 10; /* fica por cima de outros elementos */
+}
+
+
+#plano3:hover {
+  transform: scale(1.05); /* aumenta levemente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* cria destaque */
+  z-index: 10; /* fica por cima de outros elementos */
 }
 
 

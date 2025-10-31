@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    outline: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+  background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%), radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%), #d2d2d5;
+    display: grid;
+     grid-template-rows: auto 1fr auto;
+    min-height: 100vh;  
+}
+
+@font-face {
+  font-family: 'aliens and cows';
+  src: url('../fontes/aliens\ and\ cows_trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+header {
+    background: #1c1c1d;
+    color: #C9A441;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: end;
+    border-bottom: 10px solid #C9A441;
+
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    margin-top: -115px;
+}
+
+#login-box {
+    background: #0c054a;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffb52e;
+    height: 90%;
+    width: 30%;
+    
+}
+
+footer {
+  background: #1c1c1d;
+  border-top: 5px solid #C9A441;
+  height: 40px;
+  width: 100%;
+  position:fixed;
+  bottom: 0;
+  left: 0;
+}
+
+#planos1{
+    background-color: blueviolet;
+    width: 30px;
+    display: flex;
+    height: 30px;
+    flex-direction: row;
+    justify-content: start;
+}
+
+#planos2{
+    background-color: chartreuse;
+    height: 40px;
+    display: flex;
+    width: 50px;
+    flex-direction: row;
+    justify-content: start;
+    margin: 210px;
+}
+
+#planos3{
+    background-color: darkorange;
+    height: 60px;
+    display: flex;
+    width: 70px;
+    flex-direction: row;
+    justify-content: start;
+    margin: 200px;   
+}
