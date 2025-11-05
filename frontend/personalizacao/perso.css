@@ -20,6 +20,7 @@ body {
     font-style: normal; 
 }
 
+
 header {
     background: #1c1c1d;
     color: #C9A441;
@@ -27,12 +28,13 @@ header {
     grid-template-columns: 150px 1fr;
     align-items: end;
     border-bottom: 10px solid #C9A441;
+    height: 13vh;
 }
 
-#logo {
-    width: 750px;
-    height: 80px;
+header img {
+  height: 11vh;
 }
+
 
 main {
     padding: 50px 20px;

@@ -43,7 +43,8 @@
                     <input type="number" id="quantidade" min="1" value="1">
                 </div>
 
-                <button class="comprabotao">COMPRAR AGORA</button>
+                <button id="comprabotao">COMPRAR AGORA</button>
+                <button id="carrinhobotao">ADICIONAR AO CARRINHO</button>
                
             </div>
         </section>
@@ -76,6 +77,22 @@
         </section>       
     </main>
     <footer></footer>
+
+    <div id="modal-carrinho">
+        <div id="modal-conteudo">
+            <h2>Produto adicionado ao carrinho!</h2>
+            <button id="ir-carrinho">Ir para o carrinho</button>
+            <button id="continuar-comprando">Continuar comprando</button>
+        </div>
+
+    </div>
+
+    <div id="modal-compra">
+        <div id="modalconteudo">
+            <h2>Compra realizada com sucesso!</h2>
+            <button id="irparacompra">Ir as compras</button>
+            <button id="continuarcomprando">Continuar comprando</button>
+        </div>
     <script src="produto.js"></script>
 </body>
 </html>

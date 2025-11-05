@@ -9,9 +9,7 @@ login.addEventListener('click', ()=>{
 });
 
 pesquisa.addEventListener('keyup', (e)=>{
-  if(e.key === 'Enter'){
-    window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`;
-  }
+  if(e.key === 'Enter'){ window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`; }
 });
 
 
@@ -25,14 +23,10 @@ if(id != null ){
 
         const conta = await resp.json();
 
-        if (conta.img_url) {
-        avatar.src = conta.img_url;
-        } else {
-        avatar.src = '../../imagens/perfil.png';
-        }
+        if (conta.img_url) { avatar.src = conta.img_url; }
+        else { avatar.src = '../../imagens/perfil.png'; }
     } catch (err) {
         console.error('Erro ao carregar foto:', err);
-
         imgHeader.src = '../../imagens/perfil.png';
     }
     });

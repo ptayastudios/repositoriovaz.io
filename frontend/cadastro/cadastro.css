@@ -30,7 +30,11 @@ header {
     grid-template-columns: 150px 1fr;
     align-items: end;
     border-bottom: 10px solid #C9A441;
+    height: 13vh;
+}
 
+header img {
+  height: 11vh;
 }
 
 main {

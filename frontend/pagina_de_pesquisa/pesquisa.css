@@ -39,14 +39,11 @@ header {
     grid-template-columns: 150px 1fr;
     align-items: end;
     border-bottom: 10px solid #C9A441;
-    position: relative;
-    padding: 8px 16px;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    transition: transform 300ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms;
-    will-change: transform;
+    height: 13vh;
+}
+
+header img {
+  height: 11vh;
 }
 
 header.header--hidden {
@@ -60,7 +57,7 @@ header.header--pinned {
   box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-#logo { width: 750px; height: 80px; }
+
 
 #search{ width: 70%; margin: 5px; border-radius: 30px; }
 

@@ -117,7 +117,7 @@ app.get("/contas/:id", async (req, res) => {
 
 app.put("/contas/:id", async (req, res) => {
   const { id } = req.params;
-  const { nome, email, senha} = req.body;
+  const { nome, email, senha, cep, tel, desc} = req.body;
 
   try{
     // const contaAtual = await sql`SELECT * FROM contas WHERE id_usuario = ${ id }`;
@@ -128,9 +128,9 @@ app.put("/contas/:id", async (req, res) => {
     const novoNome = nome;
     const novoEmail = email;
     const novaSenha = senha;
-    //const novoCep = cep;
-    //const novoTelefone = tel;  
-    //const novaDesc = desc;  
+    const novoCep = cep;
+    const novoTelefone = tel;  
+    const novaDesc = desc;  
 
     
     const atualizar = await sql`
@@ -210,11 +210,10 @@ app.post("/comprar", async (req, res) => {
   const { total, id_produto, id_user } = req.body;
 
   const id_venda =
-    await sql`insert into vendas(total, data_venda, id_user, id_produto) values(${total},${new Date()},${id_user},${id_produto}) returning id`;
+    await sql`insert into vendas(total, data_venda, id_user, id_produto) values(${Number(total)},${new Date()},${Number(id_user)},${Number(id_produto)})`;
 
   return res.status(201).json("Compra feita!");
 });
-
 
 
 app.listen(3000, () => {

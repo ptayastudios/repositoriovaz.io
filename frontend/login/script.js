@@ -7,7 +7,7 @@ form.addEventListener('submit', async (e) => {
   const senha = document.querySelector('#password').value;
 
   try {
-    const resp = await fetch('http://localhost:3000/login', {
+    const resp = await fetch('http://192.168.1.57:3000/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, senha })

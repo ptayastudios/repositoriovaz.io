@@ -1,7 +1,9 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
+const id_user = localStorage.getItem("id_salvo");
 
-const botao_comprar = document.querySelector('.comprabotao');
+
+const botao_comprar = document.querySelector('#comprabotao');
 const img = document.querySelector('#img');
 const nome = document.querySelector('#nome');
 const preco = document.querySelector('#preco');
@@ -11,6 +13,7 @@ const esp = document.querySelector('#esp');
 const quantidade = document.querySelector('#quantidade');
 const tamanho = document.querySelector('#size');
 
+let total_ = 0;
 
 document.addEventListener('DOMContentLoaded', async ()=>{
     try{
@@ -22,6 +25,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
         nome.innerText = produto.nome;
         preco.innerText = produto.preco;
         dsc.innerText = produto.descricao;
+        total_ = Number(produto.preco);
 
         esp.innerHTML = `
         <li>Material: ${produto.material} </li>
@@ -36,32 +40,79 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     }
 });
 
-
-
 botao_comprar.addEventListener("click", async () => {
-    const id_user = localStorage.getItem("id_salvo");
-    if (id_user) {
-      const resposta = await fetch("http://localhost:3000/comprar", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          total: produto.preco,
-          id_produto: produto.id,
-          id_user: id_user,
-        }),
-      });
-      if (resposta.status == 201) {
-        alert("Parabens pela compra!");
+    if(id != null){
+      
+      if (id_user) {
+        const resp = await fetch("http://192.168.1.57:3000/comprar", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            total: total_,
+            id_produto: id,
+            id_user: id_user,
+          }),
+        });
+        //modal compra
+        if (resp.status == 201) {
+          const modal_compra = document.querySelector('#modal-compra');
+          const ir_para_compra = document.querySelector('#irparacompra');
+          const continuar_comprando = document.querySelector('#continuarcomprando');
+
+          modal_compra.style.display = 'block';
+
+          ir_para_compra.addEventListener('click', () => {
+            window.location.href = '../carrinho/carrinho.html';
+          });
+
+          continuar_comprando.addEventListener('click', () => {
+            modal_compra.style.display = 'none';
+          });
+        }
+      } else {
+        window.location.href = "../Login/login.html";
       }
-    } else {
-      window.location.href = "../Login/login.html";
+    }else{
+      alert('voçê precisa estar logado para comprar produtos');
     }
   });
 
+  
 
+  //modal carrinho
 
+  const modal_carrinho = document.querySelector('#modal-carrinho');
+  const ir_carrinho = document.querySelector('#ir-carrinho');
+  const continuar_comprando = document.querySelector('#continuar-comprando');
+
+  
+    carrinhobotao.addEventListener('click', () => {
+      if(id_user != null){  
+        modal_carrinho.style.display = 'block';
+        carrinhoAdd();
+      }
+      else{  window.location.href = '../login/login.html';  }
+    }
+    );
+
+    ir_carrinho.addEventListener('click', () => {
+      window.location.href = '../carrinho/carrinho.html';
+    });
+
+    continuar_comprando.addEventListener('click', () => {
+      modal_carrinho.style.display = 'none';
+    });
+  
+  
+
+    function carrinhoAdd(){
+      let carrinhoAtual = JSON.parse(localStorage.getItem('carrinho')) || [];
+      carrinhoAtual.push(params.get('id'));
+      localStorage.setItem('carrinho', JSON.stringify(carrinhoAtual));
+      console.log(localStorage.getItem('carrinho'));
+    }
   
 
 

@@ -6,15 +6,11 @@
     outline: 0;
 }
 
-html,
+
 body {
   height: 100%;
   width: 100%;
-  font-size: 62.5%;
   background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%), radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%), #d2d2d5;
-    display: grid;
-     grid-template-rows: auto 1fr auto;
-    min-height: 100vh;  
 }
 
 @font-face {
@@ -25,7 +21,6 @@ body {
 }
 
 
-
 header {
     background: #1c1c1d;
     color: #C9A441;
@@ -33,25 +28,67 @@ header {
     grid-template-columns: 150px 1fr;
     align-items: end;
     border-bottom: 10px solid #C9A441;
-
+    height: 13vh;
 }
+
+header img {
+  height: 11vh;
+}
+
+
+
 main {
-    display: flex;
+    display: grid;
+    grid-template-columns: 450px 1fr ;
     justify-content: center;
     align-items: center;
     padding: 70px;
-    margin-top: -115px;
+    
+    
+    
 }
 
-#login-box {
-    background: #0c054a;
-    padding: 30px;
-    border-radius: 5px;
-    text-align: center;
-    color: #ffb52e;
-    height: 90%;
-    width: 30%;
-    
+
+
+
+.coluna-esquerda {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.bloco {
+  background-color: white;
+  border: 2px solid #1c1c1d;
+  border-radius: 8px;
+  height: 150px;
+  width: 100%;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.bloco:hover {
+  transform: scale(1.05);
+  background-color: #C9A441;
+}
+
+
+#conteudo {
+  height: 400px;
+  background-color: #8c8880;
+  border-radius: 10px;
+  border: 3px solid #c9a441;
+  padding: 20px;
+  width: 80%;
+  margin: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
@@ -62,33 +99,4 @@ footer {
   position:fixed;
   bottom: 0;
   left: 0;
-}
-
-#planos1{
-    background-color: blueviolet;
-    width: 30px;
-    display: flex;
-    height: 30px;
-    flex-direction: row;
-    justify-content: start;
-}
-
-#planos2{
-    background-color: chartreuse;
-    height: 40px;
-    display: flex;
-    width: 50px;
-    flex-direction: row;
-    justify-content: start;
-    margin: 210px;
-}
-
-#planos3{
-    background-color: darkorange;
-    height: 60px;
-    display: flex;
-    width: 70px;
-    flex-direction: row;
-    justify-content: start;
-    margin: 200px;   
 }

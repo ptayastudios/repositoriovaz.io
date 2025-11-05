@@ -30,16 +30,20 @@ header {
     grid-template-columns: 150px 1fr;
     align-items: end;
     border-bottom: 10px solid #C9A441;
+    height: 13vh;
 
 }
+header img {
+  height: 11vh;
+}
+
 main {
-    padding: 50px 20px;
+    padding: 20px 20px;
 }
 
 #perfilcontainer {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 50px;
     width: 80%;
     height: 80%;
     margin: 0 auto;
@@ -47,12 +51,39 @@ main {
 
 #perfilesquerda {
     text-align: center;
-    background: #1c1c1d;
+    background: #111112;
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 15px 0 0px 15px;
     color: #C9A441;
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
 }
+
+#opcoesfodas123{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+}
+
+
+#opcoesfodas123 a{
+  color: #C9A441;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 15px;
+  margin-top:10px;
+  text-decoration: none;
+  text-align: start;
+  width: 100%;
+  border-bottom: 1px solid #C9A441;
+}
+
 
 #avatar {
     width: 160px;
@@ -78,7 +109,7 @@ main {
 #perfildireita {
     background: #1c1c1d;
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 0px 15px 15px 0px;
     color: #C9A441;
 }
 
@@ -154,10 +185,7 @@ footer {
     left: 0;
 }
 
-#logo {
-    width: 750px;
-    height: 80px;
-}
+
 
 @media (max-width: 768px) {
     #perfilcontainer {
@@ -180,18 +208,27 @@ footer {
 #editar a{
     text-decoration: none;
     color: #0a0040;
+    cursor: pointer;
 }
 
+#abrirModal{
+   cursor: pointer;
+}
 
+#abrirModal:hover, 
+#sair:hover, 
+#carrinho:hover, 
+#opcoes:hover, 
+#outrasopcoes:hover, 
+#opcoeslagais:hover, 
+#admB:hover{
+    color: #ffa500;
 
+}
 
-
-
-
-
-
-
-
+#planos{
+   color: #ffa500;
+}
 
 
 
@@ -310,4 +347,25 @@ footer {
 
 #edit-box button:hover {
   background: #ffa500;
+}
+
+
+#dsc{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+}
+#nome-dsc{
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#impplano{
+  height: 200px;
 }

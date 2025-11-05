@@ -1,5 +1,5 @@
 const id = localStorage.getItem('id_salvo');
-const apiUrl = `http://localhost:3000/contas/${id}`;
+const apiUrl = `http://192.168.1.57:3000/contas/${id}`;
 
 
 
@@ -13,7 +13,8 @@ const sair = document.querySelector("#sair");
 const atualizar = document.querySelector("#atualizar");
 const msg = document.querySelector("#msg");
 
-
+const planoN = document.querySelector("#plano-nome");
+const planoI = document.querySelector("#impplano");
 
 let nivel = "";
 
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!imgHeader || !id) return;
 
     try {
-        const resp = await fetch(`http://localhost:3000/contas/${id}`);
+        const resp = await fetch(`http://192.168.1.57:3000/contas/${id}`);
         if (!resp.ok) throw new Error('Erro ao buscar conta'); 
 
         const conta = await resp.json();
@@ -56,16 +57,27 @@ document.addEventListener('DOMContentLoaded', async () => {
         cepInput.value = conta.cep || null;
         telInput.value = conta.telefone || null;
         descInput.value = conta.descricao || null;
-
+        if(conta.plano == 3){
+            planoN.innerText = "plano caixa(s)³"; 
+            planoI.src = "../../imagens/planoultra.png";
+        }else if(conta.plano == 2){
+            planoN.innerText = "plano caixas";
+            planoI.src = "../../imagens/planomedio.png";
+        }else if(conta.plano == 1){
+            planoN.innerText = "plano caixa";
+            planoI.src = "../../imagens/planobase.png";
+        }else{
+            planoN.innerText = "ta sem plano, seu fudido";
+            planoI.src = "../../imagens/semplanofudido.png";
+        }
 
         if(conta.nivel == "adm"){
-            let admButton = document.createElement('button');
-            const class_ = document.querySelector('.acoaes');
+            let admButton = document.createElement('a');
+            const class_ = document.querySelector('#opcoesfodas123');
 
             admButton.id = 'admB';
-            admButton.addEventListener('click', ()=>{
-                window.location.href = '../personalizacao/personalizacao.html'
-            })
+            admButton.class = 'opt';
+            admButton.href = '../personalizacao/personalizacao.html';
 
             admButton.textContent = 'adicionar produto';
                 
@@ -85,7 +97,7 @@ sair.addEventListener('click', ()=>{
     window.location.href = '../catalogo/index.html';
 });
 
-
+//FAZ AS IMAGENS DOS PLANOS MUDAR JUNTO DOS NOMES DELES FAZ FAVOR E O MODAL DA ATUALIZAÇÃO NN TÁ ATUALIZANDO OS DADOS
 
 
 
@@ -122,6 +134,24 @@ document.querySelector("#editar").addEventListener("submit", async (e) => {
 });
 
 
+const modalperfil = document.querySelector("#modalPerfil");
+const abrirModal = document.querySelector("#abrirModal");
+const fecharModal = document.querySelector(".fechar");
+
+abrirModal.addEventListener("click", ()=>{
+    modalperfil.style.display = "flex";
+});
+
+fecharModal.addEventListener("click", ()=>{
+    modalperfil.style.display = "none";
+});
+
+window.addEventListener("click", (event)=>{
+    if(event.target === modalperfil){
+        modalperfil.style.display = "none";
+    }
+}); 
+
 
 
 
@@ -152,7 +182,7 @@ atualizar.addEventListener("click", async ()=>{
 
 });
 
-
+/*
 const modal = document.querySelector("#modalPerfil");
 const btn = document.querySelector("#editar");
 const span = document.querySelector(".fechar");

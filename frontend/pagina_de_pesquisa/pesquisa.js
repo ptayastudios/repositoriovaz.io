@@ -69,11 +69,11 @@ async function buscarProdutos(pesquisaV) {
   try {
     console.log(pesquisaV);
     
-    const resp = await fetch(`http://localhost:3000/search/${pesquisaV}`);
+    const resp = await fetch(`http://192.168.1.57:3000/search/${pesquisaV}`);
     if (!resp.ok) throw new Error(`Erro ao buscar produto ${pesquisaV}`);
 
     if(pesquisaV == null || pesquisaV == undefined){
-      const resp = await fetch(`http://localhost:3000/produtos}`);
+      const resp = await fetch(`http://192.168.1.57:3000/produtos}`);
       if (!resp.ok) throw new Error(`Erro ao buscar produto}`);
     }
     
