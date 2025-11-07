@@ -67,7 +67,7 @@ header.header--hidden {
   border: 3px #C9A441 solid;
 }
 
-#search{ width: 70%; margin: 5px; border-radius: 30px; }
+#search{ width: 70%; margin: 5px; border-radius: 30px; background-color: #f2f3f4;}
 
 
 .nome{
@@ -97,7 +97,7 @@ a.product-card {
   justify-content: space-between;
   text-decoration: none;
   color: inherit;
-  background: #f7f3ef;
+  background: #f2f3f4;
   border-radius: 5px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   padding: 18px;
@@ -132,7 +132,7 @@ a.product-card:focus-visible {
   width: 80%;                 
   aspect-ratio: 15/6;
   margin: 0 auto;             
-  background-color: #f7f3ef;
+  background-color: #f2f3f4;
   border-radius: 5px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -183,7 +183,7 @@ a.product-card:focus-visible {
 
 
 #produto2.product-card {
-  background-color: #f7f3ef;
+  background-color: #f2f3f4;
   width: 85%;
   height: 100%;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
@@ -204,7 +204,7 @@ a.product-card:focus-visible {
 .produtosCl.product-card {
   width: 50%;
   aspect-ratio: 15/6;
-  background-color: #f7f3ef;
+  background-color: #f2f3f4;
   margin: 5px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   border-radius: 5px;
@@ -320,7 +320,7 @@ a.product-card:focus-visible {
 
 
 .editorial {
-    background-color: #f9f9f9;
+    background-color: #f2f3f4;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.212);
     border-radius: 5px;
     height: 90%;

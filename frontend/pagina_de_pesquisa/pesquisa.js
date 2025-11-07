@@ -6,10 +6,6 @@ const pesquisaV = document.querySelector('#search').value;
 const params = new URLSearchParams(window.location.search);
 const pesq = params.get('pesquisa');
 
-login.addEventListener('click', ()=>{
-    if(!id){ window.location.href = '../login/login.html'; }
-    else{ window.location.href = '../perfil/perfil.html'; }
-});
 
 function renderizarProdutos(produtos) {
   console.log(produtos);
@@ -94,3 +90,31 @@ pesquisa.addEventListener('input', (e) => {
     e.preventDefault();
     buscarProdutos(pesquisa.value.trim());  
 });
+
+
+
+
+const avatar = document.querySelector('#avatar');
+
+login.addEventListener('click', ()=>{
+    if(!id){ window.location.href = '../login/login.html'; }
+    else{ window.location.href = '../perfil/perfil.html'; }
+});
+
+if(id != null ){
+    document.addEventListener('DOMContentLoaded', async () => {
+    
+    try {
+        const resp = await fetch(`http://localhost:3000/contas/${id}`);
+        if (!resp.ok) throw new Error('Erro ao buscar conta');
+
+        const conta = await resp.json();
+
+        if (conta.img_url) { avatar.src = conta.img_url; }
+        else { avatar.src = '../../imagens/perfil.png'; }
+    } catch (err) {
+        console.error('Erro ao carregar foto:', err);
+        imgHeader.src = '../../imagens/perfil.png';
+    }
+    });
+}

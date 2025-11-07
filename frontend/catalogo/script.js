@@ -1,18 +1,23 @@
-const login = document.querySelector('#login-icon');
-const avatar = document.querySelector('#avatar');
-const id = localStorage.getItem('id_salvo');
+
+
+
 const pesquisa = document.querySelector('#search');
 
-login.addEventListener('click', ()=>{
-    if(!id){ window.location.href = '../login/login.html'; }
-    else{ window.location.href = '../perfil/perfil.html'; }
-});
+
 
 pesquisa.addEventListener('keyup', (e)=>{
   if(e.key === 'Enter'){ window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`; }
 });
 
 
+const avatar = document.querySelector('#avatar');
+const login = document.querySelector('#login-icon');
+const id = localStorage.getItem('id_salvo');
+
+login.addEventListener('click', ()=>{
+    if(!id){ window.location.href = '../login/login.html'; }
+    else{ window.location.href = '../perfil/perfil.html'; }
+});
 
 if(id != null ){
     document.addEventListener('DOMContentLoaded', async () => {

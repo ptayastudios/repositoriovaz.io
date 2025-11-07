@@ -66,9 +66,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }else if(conta.plano == 1){
             planoN.innerText = "plano caixa";
             planoI.src = "../../imagens/planobase.png";
-        }else{
-            planoN.innerText = "ta sem plano, seu fudido";
-            planoI.src = "../../imagens/semplanofudido.png";
         }
 
         if(conta.nivel == "adm"){
@@ -79,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             admButton.class = 'opt';
             admButton.href = '../personalizacao/personalizacao.html';
 
-            admButton.textContent = 'adicionar produto';
+            admButton.textContent = 'administração';
                 
             
             class_.appendChild(admButton);

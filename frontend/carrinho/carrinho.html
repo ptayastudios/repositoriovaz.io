@@ -9,14 +9,17 @@
 <body>
     <header>
         <img id="logo" src="../../imagens/logo.png" alt="Logo Vaz.io">
-    </header>
+        <div id="login-icon">
+          <img src="../../imagens/perfil.png" id="avatar">
+        </div>
+      </header>
 
     <main>
         <h1 class="nome">Carrinho de Compras</h1>
 
         <section id="carrinhocontainer">
             <div id="carrinhoitens">
-                <!-- Itens do carrinho serão inseridos aqui -->
+                
             </div>
         </section>
 
@@ -27,9 +30,35 @@
                 <button id="checkout">Finalizar Compra</button>
             </div>
         </section>
+
+
+        
+
+        <div id="modalcontainer1">
+            <div id="modal-esvaziar">
+                <h2>Tem certeza que deseja esvaziar o carrinho?</h2>
+                <div class="modal-botoes">
+                    <button id="confirmar-esvaziar">Sim</button>
+                    <button id="cancelar-esvaziar">Não</button>
+                </div>
+        </div>
+
+
+        <div id="modalcontainer2">
+            <div id="modal-finalizar">
+                <h2>Tem Certeza que quer Finalizar a Compra ?</h2>
+                <div class="modal-botoes">
+                    <button id="confirmar-finalizar">Sim</button>
+                    <button id="cancelar-finalizar">Não</button>
+                </div>
+        </div>
+
     </main>
+
 
     
     <footer></footer>
 
     <script src="carrinho.js"></script>
+
+</body>

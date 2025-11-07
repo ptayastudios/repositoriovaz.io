@@ -3,6 +3,7 @@ const id = params.get('id');
 const id_user = localStorage.getItem("id_salvo");
 
 
+
 const botao_comprar = document.querySelector('#comprabotao');
 const img = document.querySelector('#img');
 const nome = document.querySelector('#nome');
@@ -15,8 +16,25 @@ const tamanho = document.querySelector('#size');
 
 let total_ = 0;
 
+const avatar = document.querySelector('#avatar');
+const login = document.querySelector('#login-icon');
+
+login.addEventListener('click', ()=>{
+    if(!id){ window.location.href = '../login/login.html'; }
+    else{ window.location.href = '../perfil/perfil.html'; }
+});
+
 document.addEventListener('DOMContentLoaded', async ()=>{
     try{
+          if(id_user != null){
+          const respc = await fetch(`http://localhost:3000/contas/${id_user}`);
+          if (!respc.ok) throw new Error('Erro ao buscar conta');
+
+          const conta = await respc.json();
+
+          if (conta.img_url) { avatar.src = conta.img_url; }
+          else { avatar.src = '../../imagens/perfil.png'; }
+        }
         const resp = await fetch(`http://localhost:3000/produtos/${id}`);
         if (!resp.ok) throw new Error('Erro ao buscar produto main');
         const produto = await resp.json();
@@ -41,8 +59,10 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 });
 
 botao_comprar.addEventListener("click", async () => {
+    
+    
+
     if(id != null){
-      
       if (id_user) {
         const resp = await fetch("http://192.168.1.57:3000/comprar", {
           method: "POST",
@@ -117,6 +137,13 @@ botao_comprar.addEventListener("click", async () => {
 
 
 
+
+
+    
+
+
+
+  
 /*
 const p1_img = document.querySelector('#p1-img');
 const p1_name = document.querySelector('#p1-img');
@@ -162,3 +189,5 @@ const p3_price = document.querySelector('#p3-price');
 
 
 */
+
+

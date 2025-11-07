@@ -369,3 +369,22 @@ footer {
 #impplano{
   height: 200px;
 }
+
+
+
+#login-icon{
+  border-radius: 100%;
+  background-color: #C9A441;
+  width: 50px;
+  height: 50px;
+  position:absolute;
+  right: 10px;
+  top: 10px;
+}
+#login-icon:hover{ background-color: #e0c651; }
+#avatar2{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 3px #C9A441 solid;
+}
