@@ -1,5 +1,15 @@
 const add = document.querySelector('#submitButton');
 
+const nome = document.querySelector('#nome');
+const descricao = document.querySelector('#descricao');
+const preco = document.querySelector('#preco');
+const material = document.querySelector('#material');
+const cor = document.querySelector('#cor');
+const modelo = document.querySelector('#modelo');
+const origem = document.querySelector('#origem');
+
+let modo = 1;
+
 add.addEventListener('click', async (e)=>{
         e.preventDefault();
         
@@ -42,6 +52,7 @@ add.addEventListener('click', async (e)=>{
 
 
 
+
 document.addEventListener('DOMContentLoaded', async ()=>{
   const div_content = document.querySelector("#caixas");
   div_content.innerHTML = '';
@@ -56,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
     produtos.forEach((p) => {
       const link = document.createElement("a");
-      link.href = `../Detalhes/detalhes.html?id=${p.id_produto}`;
+      //link.href = `../Detalhes/detalhes.html?id=${p.id_produto}`;
       link.target = "_blank";
       link.classList.add("card");
 
@@ -69,10 +80,80 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
       const preco_card = document.createElement("h6");
       preco_card.innerText = "R$ " + p.preco;
+      
+
+      const delete_btn = document.createElement("button");
+      const modal_pergunta = document.querySelector('#containermodal');
+      
+
+      delete_btn.innerText = "🗑";
+      delete_btn.addEventListener('click', async ()=>{
+        modal_pergunta.style.display = 'block';
+
+        document.querySelector('#sim').addEventListener('click', async ()=>{
+        modal_pergunta.style.display = 'none';
+         try {
+          const resp = await fetch(`http://192.168.1.57:3000/delete/produtos/${p.id_produto}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+
+          });
+
+          const data = await resp.json().catch(() => ({}));
+
+          if (!resp.ok) {
+            alert(data.erro || "Erro ao deletar produto");
+            return;
+          }
+
+          alert("Produto deletado com sucesso!");
+        } catch (erro) {
+          console.error("Erro ao deletar produto:", erro);
+          alert("Erro de rede/servidor");
+        }
+      });
+
+      document.querySelector('#nao').addEventListener('click', async ()=>{
+        modal_pergunta.style.display = 'none';
+      });
+
+       
+      });
+
+      const update_btn = document.createElement("button");
+      update_btn.innerText = "✏";
+      update_btn.addEventListener('click', async ()=>{
+        try{
+          const resp = await fetch(`http://localhost:3000/produtos/${p.id_produto}`);
+          if (!resp.ok) throw new Error('Erro ao buscar produto main');
+          const produtoU = await resp.json();
+
+          nome.value = produtoU.nome;
+          descricao.innerText = produtoU.descricao;
+          preco.value = produtoU.preco;
+          material.value = produtoU.material;
+          cor.value = produtoU.cor;
+          modelo.value = produtoU.modelo;
+          origem.value = produtoU.origem;
+
+
+          modo = 2;
+
+          const voltarBtn = document.createElement("button");
+          voltarBtn.id = 'voltarbtn';
+          voltarBtn.innerText = "adicionar novo produto";
+          voltarBtn.onclick = addNewP;
+
+        }catch(error){
+
+        }
+      });
 
       link.appendChild(imagem_card);
       link.appendChild(titulo_card);
       link.appendChild(preco_card);
+      link.appendChild(delete_btn);
+      link.appendChild(update_btn);
 
       div_content.appendChild(link);
     });
@@ -82,8 +163,17 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   }
 });
 
+function addNewP(){
+  nome.value = '';
+  descricao.innerText = '';
+  preco.value = '';
+  material.value = '';
+  cor.value = '';
+  modelo.value = '';
+  origem.value = '';
 
-
+  modo=1;
+}
 
 
 const avatar = document.querySelector('#avatar');

@@ -38,9 +38,12 @@ function renderizarProdutos(produtos) {
         const preco_card = document.createElement("h6");
         preco_card.innerText = "R$ " + p.preco;
 
+        
+
         link.appendChild(imagem_card);
         link.appendChild(titulo_card);
         link.appendChild(preco_card);
+
 
         div_content.appendChild(link);
 
@@ -74,8 +77,13 @@ async function buscarProdutos() {
 document.addEventListener('DOMContentLoaded', () => {
   buscarProdutos();
 });
+
+
+
+
+
 //comeca o modal de esvaziar carrinho
-const modal_esvaziar = document.querySelector('#modal-esvaziar');
+const modal_esvaziar = document.querySelector('#modalcontainer1');
 const btn_esvaziar = document.querySelector('#confirmar-esvaziar');
 const btn_cancelar = document.querySelector('#cancelar-esvaziar');
 
@@ -96,30 +104,20 @@ document.querySelector('#cancelar-esvaziar').addEventListener('click', ()=>{
 //termina o modal de esvaziar carrinho
 
 
-
-const modal_finalizar = document.querySelector('#modal-finalizar');
-const btn_finalizar = document.querySelector('#confirmar-finalizar');
-const btn_cancelar2 = document.querySelector('#cancelar-finalizar');
-
-
-
-document.querySelector('#checkout').addEventListener('click', ()=>{
-    modal_finalizar.style.display = 'block';
-
+//comeca o modal de finalizar compra
+const modal_finalizar = document.querySelector('#modalcontainer2');
+document.querySelector('#checkout').addEventListener('click', () => {
+  modal_finalizar.style.display = 'flex';
 });
-
-
-document.querySelector('#confirmar-finalizar').addEventListener('click', ()=>{
-    localStorage.clear('carrinho');
-    modal_finalizar.style.display = 'none';
-    window.location.reload();
+document.querySelector('#confirmar-finalizar').addEventListener('click', () => {
+  localStorage.removeItem('carrinho');
+  modal_finalizar.style.display = 'none';
+  window.location.reload();
 });
-
-
-document.querySelector('#cancelar-finalizar').addEventListener('click', ()=>{
-    modal_finalizar.style.display = 'none';
+document.querySelector('#cancelar-finalizar').addEventListener('click', () => {
+  modal_finalizar.style.display = 'none';
 });
-
+//termina o modal de finalizar compra
 
 
 

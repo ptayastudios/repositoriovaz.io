@@ -45,6 +45,8 @@ main {
     margin-top: -115px;
 }
 
+
+
 #login-box {
     background: #1c1c1d;
     padding: 30px;
@@ -54,6 +56,11 @@ main {
     width: 30%;
     margin-top: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#login-box:hover {
+    transform: scale(1.02);
+    transition: all 0.4s ease-out;
 }
 
 #login-box h2 {

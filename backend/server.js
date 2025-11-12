@@ -26,6 +26,8 @@ app.get("/search/:pesquisa", async (req,res) => {
   }
 }); 
 
+
+
 app.get("/produtos", async (req,res) => {
   try{
       const resultado = await sql`SELECT * FROM produtos`;
@@ -204,6 +206,19 @@ app.get("/produtos/:id", async (req, res) => {
   }
 });
 
+app.delete("/delete/produtos/:id", async (req,res) => {
+  const { id } = req.params;
+  try{
+    const resultado = await sql`delete from produtos where id_produto = ${ id } returning id_produto`;
+    if(resultado.length === 0){ return res.status(404).json({ erro: "produto não encontrado" }); }
+
+    return res.status(200).json(resultado[0]);
+  }catch(err){
+    console.error("erro ao buscar produto", err);
+    res.status(500).json({ erro: "erro no servidor"});
+  }
+});
+
 
 
 app.post("/comprar", async (req, res) => {
@@ -213,6 +228,15 @@ app.post("/comprar", async (req, res) => {
     await sql`insert into vendas(total, data_venda, id_user, id_produto) values(${Number(total)},${new Date()},${Number(id_user)},${Number(id_produto)})`;
 
   return res.status(201).json("Compra feita!");
+});
+
+app.put("/assinar", async (req, res) => {
+  const { plano, id_usuario } = req.body;
+
+  const id_plano =
+    await sql`update contas set plano = ${plano} where id_usuario = ${id_usuario} returning id_usuario`;
+
+  return res.status(201).json("assinatura feita!");
 });
 
 

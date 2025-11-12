@@ -82,7 +82,10 @@ async function buscarProdutos(pesquisaV) {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => buscarProdutos());
+document.addEventListener('DOMContentLoaded', () => {
+   pesquisa.value = pesq;
+   buscarProdutos(pesquisa.value.trim());   
+});
 
 
 pesquisa.addEventListener('input', (e) => {
