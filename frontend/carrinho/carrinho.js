@@ -112,7 +112,7 @@ document.querySelector('#checkout').addEventListener('click', () => {
 document.querySelector('#confirmar-finalizar').addEventListener('click', () => {
   localStorage.removeItem('carrinho');
   modal_finalizar.style.display = 'none';
-  window.location.reload();
+  window.location.href = '../pagina_de_pagamentokkkkk/pagina_de_pagamento.html';
 });
 document.querySelector('#cancelar-finalizar').addEventListener('click', () => {
   modal_finalizar.style.display = 'none';
@@ -146,3 +146,16 @@ if(id != null ){
     }
     });
 }
+
+
+
+
+
+
+
+
+
+const pesquisa = document.querySelector('#search');
+pesquisa.addEventListener('keyup', (e)=>{
+  if(e.key === 'Enter'){ window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`; }
+});

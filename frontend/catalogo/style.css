@@ -323,7 +323,7 @@ a.product-card:focus-visible {
     background-color: #f2f3f4;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.212);
     border-radius: 5px;
-    height: 90%;
+    height: 92%;
     width: 60%;
     padding: 4rem;
     line-height: 1.8;
@@ -379,6 +379,7 @@ footer {
   position:fixed;
   bottom: 0;
   left: 0;
+  z-index: 2000;
 }
 
 
@@ -518,3 +519,25 @@ width: 100%;
 #plano3 img{
   height: 100%;
 }
+
+#carrinho_compras{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 80px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#pesquisa-icone{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 140px;
+  top: 10px;
+  cursor: pointer;
+}
+
+
+
+#search{ width: 70%; margin: 5px; border-radius: 30px; background-color: #f2f3f4;}

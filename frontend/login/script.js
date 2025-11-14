@@ -28,3 +28,12 @@ form.addEventListener('submit', async (e) => {
     alert('Erro no servidor');
   }
 });
+
+
+
+
+
+const pesquisa = document.querySelector('#search');
+pesquisa.addEventListener('keyup', (e)=>{
+  if(e.key === 'Enter'){ window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`; }
+});

@@ -57,6 +57,15 @@ p2.addEventListener('click', ()=>{ window.location.href = '../pagina_dos_planos/
 p3.addEventListener('click', ()=>{ window.location.href = '../pagina_dos_planos/pagina_planos.html?id=3' });
 
 assinar.addEventListener('click', async ()=>{
+    const modal = document.getElementById('modal');
+    modal.style.display = 'block';
+    const cancelar = document.getElementById('cancelar');
+    cancelar.addEventListener('click', ()=>{
+        modal.style.display = 'none';
+    });
+    const confirmar = document.getElementById('confirmar');
+    confirmar.addEventListener('click', async ()=>{
+        modal.style.display = 'none';
     try{
         const payload = {
             id_usuario : id,
@@ -80,3 +89,12 @@ assinar.addEventListener('click', async ()=>{
         alert('Erro de rede/servidor');
     }
 })
+});
+
+
+
+const pesquisa = document.querySelector('#search');
+
+pesquisa.addEventListener('keyup', (e)=>{
+  if(e.key === 'Enter'){ window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`; }
+});

@@ -22,7 +22,6 @@ body {
 
 
 
-
 header {
     background: #1c1c1d;
     color: #C9A441;
@@ -31,12 +30,11 @@ header {
     align-items: end;
     border-bottom: 10px solid #C9A441;
     height: 13vh;
-
 }
+
 header img {
   height: 11vh;
 }
-
 main {
     padding: 20px 20px;
 }
@@ -90,9 +88,11 @@ main {
 #avatar {
     width: 160px;
     height: 160px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     border: 4px solid #C9A441;
     margin-bottom: 20px;
+    
 }
 
 #perfilesquerda h2 {
@@ -220,8 +220,8 @@ footer {
 #abrirModal:hover, 
 #sair:hover, 
 #carrinho:hover, 
-#opcoes:hover, 
-#outrasopcoes:hover, 
+#cancelar:hover, 
+#excluir:hover, 
 #opcoeslagais:hover, 
 #admB:hover{
     color: #ffa500;
@@ -390,3 +390,103 @@ footer {
   border-radius: 100%;
   border: 3px #C9A441 solid;
 }
+
+#modalplano{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1001;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+}
+
+#conteudoplano{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1c1c1d;
+    color: #ffb52e;
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+
+}
+
+#conteudoplano h2{
+  font-size: 30px;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  font-family: 'aliens and cows', monospace;
+  font-weight: 100;
+}
+
+#confirmar-cancelamento{
+  background: #ffb52e;
+  color: #0a0040;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#fechar-plano{
+  background: #ffb52e;
+  color: #0a0040;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#fechar-plano:hover,
+#confirmar-cancelamento:hover{
+  background: #ffa500;
+  transition: background 0.3s ease;
+}
+
+#carrinho_compras{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 80px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#pesquisa-icone{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 140px;
+  top: 10px;
+  cursor: pointer;
+}
+
+
+
+#pesquisa-icone{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 140px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#search{ width: 70%; margin: 5px; border-radius: 30px; background-color: #f2f3f4;}

@@ -117,6 +117,20 @@ app.get("/contas/:id", async (req, res) => {
 });
 
 
+app.delete("/delete/contas/:id", async (req,res) => {
+  const { id } = req.params;
+  try{
+    const resultado = await sql`delete from contas where id_usuario = ${ id } returning id_usuario`;
+    if(resultado.length === 0){ return res.status(404).json({ erro: "produto não encontrado" }); }
+
+    return res.status(200).json(resultado[0]);
+  }catch(err){
+    console.error("erro ao buscar conta", err);
+    res.status(500).json({ erro: "erro no servidor"});
+  }
+});
+
+
 app.put("/contas/:id", async (req, res) => {
   const { id } = req.params;
   const { nome, email, senha, cep, tel, desc} = req.body;
@@ -181,6 +195,32 @@ app.post('/produtosP', async (req, res) => {
   } catch (e) {
     console.error('erro ao cadastrar produto', e);
     return res.status(500).json({ erro: 'erro no servidor' });
+  }
+});
+
+
+
+app.put('/produtosUpdate/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const { nome, descricao, preco, material, cor, modelo, origem } = req.body;
+
+    if ([nome, descricao, preco, material, cor, modelo, origem].some(v => v == null)) {
+      return res.status(400).json({ erro: 'todos os campos são obrigatorios' });
+    }
+
+    const resultado = await sql`
+      update produtos set
+      nome = ${nome},  descricao = ${descricao},  preco = ${preco},  material = ${material},  cor = ${cor},  modelo = ${modelo},  origem = ${origem}
+      where id_produto = ${id} returning id_produto;`;
+
+    if (resultado.count === 0) { return res.status(404).json({ erro: "produto não encontrado" }); }
+    res.status(200).json({ produto: resultado[0] });
+
+  } catch (e) {
+    console.error("Erro ao editar produto:", e);
+    res.status(500).json({ erro: 'erro no servidor' });
   }
 });
 

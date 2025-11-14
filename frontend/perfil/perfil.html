@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="perfil.css">
 </head>
 <body>
-     <header>
+      <header>
         <img id="logo" src="../../imagens/logo.png" alt="Logo Vaz.io">
-
-        
+        <input type="search" id="search">
+        <a href="../carrinho/carrinho.html"> <img   id="carrinho_compras"  src="../../imagens/carrinho.png.png" alt="" >   </a>
+        <a href="../pagina_de_pesquisa/pesquisa.html"> <img   id="pesquisa-icone"  src="../../imagens/lupa.png" alt="" >   </a>
+        <div id="login-icon">
+          <img src="../../imagens/perfil.png" id="avatar2">
+        </div>
       </header>
-
 
     <main>
         
@@ -25,14 +28,14 @@
                   <a class="opt" id = "abrirModal">editar perfil</a>
                   <a class="opt" id ="sair" href="../catalogo/index.html">sair da conta</a>
                   <a class="opt" id="carrinho" href="../carrinho/carrinho.html">ver carrinho</a>
-                  <a class="opt" id="opcoes" href="">mais opções</a>
-                  <a class="opt" id="outrasopcoes"  href="">outras opções</a>          
+                  <a class="opt" id="cancelar">cancelar assinatura</a>
+                  <a class="opt" id="excluir" >exclir a conta</a>          
                   <a class="opt" id="opcoeslagais" href="">opções legais</a>
                 </section>
                 <section id="planos">
                   <h2 id="plano-nome"> Parabéns, você está no plano</h2>
                   <img id="impplano" src="" alt="Ícone do plano">
-                  <!-- <h3>qawsdefrty</h3> //vai colocar o nome do plano aqui -->
+                  
 
 
                 </section>
@@ -58,11 +61,6 @@
                     <div class="info-row"><span>Localização:</span> <p id="info-localizacao">Brasil</p></div>
                 </section>
 
-                <section class="persilsecao">
-                    <div class="acoaes">
-                        <!-- <button id="abrirModal">Editar Perfil/Atualizar</button> -->
-                        <!-- <button id="sair">Sair da conta</button> -->
-                    </div>
                 </section>
             </div>
         </div>
@@ -107,6 +105,12 @@
     </div>
   </div>
 
+  <div id="modalplano"> 
+    <div id="conteudoplano">
+      <h2>Gostaria de cancelar seu plano atual?</h2> 
+      <button id="confirmar-cancelamento">Sim, cancelar plano</button>
+      <button id="fechar-plano">Não, manter plano</button>
+    </div> 
     <script src="script.js"></script>
    
 </body>

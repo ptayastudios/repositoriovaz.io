@@ -84,7 +84,7 @@ botao_comprar.addEventListener("click", async () => {
           modal_compra.style.display = 'block';
 
           ir_para_compra.addEventListener('click', () => {
-            window.location.href = '../carrinho/carrinho.html';
+            window.location.href = '../pagina_de_pagamentokkkkk/pagina_de_pagamento.html';
           });
 
           continuar_comprando.addEventListener('click', () => {
@@ -138,8 +138,10 @@ botao_comprar.addEventListener("click", async () => {
 
 
 
-
-    
+const pesquisa = document.querySelector('#search');
+    pesquisa.addEventListener('keyup', (e)=>{
+  if(e.key === 'Enter'){ window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`; }
+});
 
 
 

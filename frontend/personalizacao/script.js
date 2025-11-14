@@ -7,14 +7,17 @@ const material = document.querySelector('#material');
 const cor = document.querySelector('#cor');
 const modelo = document.querySelector('#modelo');
 const origem = document.querySelector('#origem');
+const aaaaaaa = document.querySelector('#afodaseessabosta');
 
-let modo = 1;
+let id_pSlc = 0;
 
 add.addEventListener('click', async (e)=>{
         e.preventDefault();
         
+        
 
-        const payload = {
+        if(id_pSlc == 0){
+          const payload = {
             nome : document.querySelector('#nome').value,
             descricao : document.querySelector('#descricao').value,
             preco : document.querySelector('#preco').value,
@@ -22,29 +25,57 @@ add.addEventListener('click', async (e)=>{
             cor : document.querySelector('#cor').value,
             modelo : document.querySelector('#modelo').value,
             origem : document.querySelector('#origem').value
- 
-        };
+          };
 
-        try{
-            const resp = await fetch(`http://192.168.1.57:3000/produtosP`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload),
-            });
+          try{
+              const resp = await fetch(`http://192.168.1.57:3000/produtosP`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(payload),
+              });
 
-            if (!resp.ok) {
-                const erro = await resp.json().catch(()=>({erro:'Falha'}));
-                alert(erro.erro || 'Erro ao cadastrar');
-                return;
-            }
-           const produto_add = await resp.json(); 
-           alert('produto adicionado com sucesso');
+              if (!resp.ok) {
+                  const erro = await resp.json().catch(()=>({erro:'Falha'}));
+                  alert(erro.erro || 'Erro ao cadastrar');
+                  return;
+              }
+            const produto_add = await resp.json(); 
+            alert('produto adicionado com sucesso');
 
-        } catch (err) {
-            console.error(err);
-            alert('Erro de rede/servidor');
+          } catch (err) {
+              console.error(err);
+              alert('Erro de rede/servidor');
+          }
+        }else{
+          const payload = {
+            nome : document.querySelector('#nome').value,
+            descricao : document.querySelector('#descricao').value,
+            preco : document.querySelector('#preco').value,
+            material : document.querySelector('#material').value,
+            cor : document.querySelector('#cor').value,
+            modelo : document.querySelector('#modelo').value,
+            origem : document.querySelector('#origem').value
+          };
+
+          try{
+              const resp = await fetch(`http://192.168.1.57:3000/produtosUpdate/${id_pSlc}`, {
+                  method: 'PUT',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(payload),
+              });
+              if (!resp.ok) {
+                  const erro = await resp.json().catch(()=>({erro:'Falha'}));
+                  alert(erro.erro || 'Erro ao cadastrar');
+                  return;
+              }
+
+            alert(`${document.querySelector('#nome').value} foi editado com sucesso`);
+
+          } catch (err) {
+              console.error(err);
+              alert('Erro de rede/servidor');
+          }
         }
-    
 });
 
 
@@ -57,6 +88,9 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   const div_content = document.querySelector("#caixas");
   div_content.innerHTML = '';
   //pesquisa.value = pesq;
+
+  if(id_pSlc == 0){ aaaaaaa.innerText = 'nenhum produto selecionado '; }
+  else{ aaaaaaa.innerText = `produto selecionado: ${id_pSlc}`; }
 
   try {
     const resposta = await fetch("http://localhost:3000/produtos");
@@ -136,14 +170,8 @@ document.addEventListener('DOMContentLoaded', async ()=>{
           modelo.value = produtoU.modelo;
           origem.value = produtoU.origem;
 
-
-          modo = 2;
-
-          const voltarBtn = document.createElement("button");
-          voltarBtn.id = 'voltarbtn';
-          voltarBtn.innerText = "adicionar novo produto";
-          voltarBtn.onclick = addNewP;
-
+          id_pSlc = p.id_produto;
+          aaaaaaa.innerText = `produto selecionado: ${id_pSlc}`; 
         }catch(error){
 
         }
@@ -163,17 +191,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
   }
 });
 
-function addNewP(){
-  nome.value = '';
-  descricao.innerText = '';
-  preco.value = '';
-  material.value = '';
-  cor.value = '';
-  modelo.value = '';
-  origem.value = '';
 
-  modo=1;
-}
 
 
 const avatar = document.querySelector('#avatar');
@@ -202,6 +220,18 @@ if(id != null ){
     }
     });
 }
+
+
+
+
+
+
+
+
+const pesquisa = document.querySelector('#search');
+pesquisa.addEventListener('keyup', (e)=>{
+  if(e.key === 'Enter'){ window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`; }
+});
 
 // async function buscarProdutos() {
 //   try {

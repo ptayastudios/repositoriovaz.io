@@ -39,3 +39,17 @@ document.querySelector('#form').addEventListener('submit', async (e) => {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+const pesquisa = document.querySelector('#search');
+pesquisa.addEventListener('keyup', (e)=>{
+  if(e.key === 'Enter'){ window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`; }
+});

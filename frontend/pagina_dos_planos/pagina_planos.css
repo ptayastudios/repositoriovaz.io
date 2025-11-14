@@ -53,6 +53,7 @@ main {
   align-items: center;
   justify-content: center;
 }
+
 #esq{
   display: flex;
   height: 100%;
@@ -63,45 +64,81 @@ main {
 }
 
 
-.plano{
-  background-color: #e9ebec;
-  border-radius: 5px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+.plano {
+  background: linear-gradient(135deg, #eceeef, #dfe1e3);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  box-shadow: 
+    0 2px 6px rgba(0,0,0,0.08),
+    0 6px 20px rgba(0,0,0,0.12);
+
   margin: 20px;
   height: 30%;
   width: 60%;
 
-  padding: 10px;
+  padding: 20px;
+  gap: 10px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+  text-decoration: none;
+  color: inherit;
+
+  transition: 0.3s ease;
+
+
 }
-.plano h1{
-  color:#1c1c1d;
+
+.plano h1 {
+  color: #1c1c1d;
   font-family: aliens and cows;
   font-weight: 500;
   margin-bottom: 7px;
 }
-.plano:hover{
-  transform:translateX(20px);
+
+.plano:hover {
+  transform: translateX(12px) scale(1.02);
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.12),
+    0 10px 28px rgba(0,0,0,0.18);
 }
 
-#plano-selecionado{
+
+#plano-selecionado {
   display: flex;
+  flex-direction: column;
   gap: 20px;
   align-items: start;
-  flex-direction: column;
   text-decoration: none;
   color: inherit;
   background: #f2f3f4;
   border-radius: 5px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-
   box-sizing: border-box;
   height: 80%;
   width: 90%;
+  line-height: 1.4;
+  word-break: break-word;
+  transition: 0.3s ease;
+
 }
-#plano-selecionado h1{
-  font-family: aliens and cows;
+
+#plano-selecionado:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+#plano-selecionado h1 {
+  font-family: 'Aliens and Cows', sans-serif;
   font-weight: 500;
+  margin: 0;
 }
+
 #cima{
   width: 100%;
   height: 30%;
@@ -113,18 +150,22 @@ main {
   padding: 10px;
   border-bottom: #e0c651 solid 5px;
 }
+
 #cima h1{color: #C9A441;}
+
 #meio{
   width: 100%;
   height: 50%;
   padding: 20px;
 }
+
 #img{
   background-color: #f2f3f4;
   height: 100%;
   aspect-ratio: 1/1;
   border-radius: 5px;
 }
+
 #baixo{
   width: 100%;
   height: 20%;
@@ -133,6 +174,7 @@ main {
   justify-content: end;
   padding: 20px;
 }
+
 #assinar{
   padding: 10px 20px;
   font-size: 16px;
@@ -143,8 +185,20 @@ main {
   color: #1c1c1d;
   font-weight: bold;
 
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
 }
 
+#assinar:hover{
+  background-color: #d4b055;
+  transform: scale(1.05);
+}
+
+#assinar:active{
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
 
 
 
@@ -174,10 +228,92 @@ footer {
   right: 10px;
   top: 10px;
 }
+
 #login-icon:hover{ background-color: #e0c651; }
+
 #avatar{
   width: 100%;
   height: 100%;
   border-radius: 100%;
   border: 3px #C9A441 solid;
+}
+
+#modal{
+     position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+}
+
+#conteudo{
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1c1c1d;
+    color: #ffb52e;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    justify-content: center;
+}
+
+#confirmar{
+      background: #ffb52e;
+  color: #0a0040;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.2s;
+}
+
+#cancelar{
+    background: #ffb52e;
+  color: #0a0040;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.2s;
+}
+
+#confirmar:hover, #cancelar:hover {
+  background: #e0a91f;
+}
+
+
+#search{ width: 70%; margin: 5px; border-radius: 30px; background-color: #f2f3f4;}
+
+
+#carrinho_compras{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 80px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#pesquisa-icone{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 140px;
+  top: 10px;
+  cursor: pointer;
 }

@@ -51,7 +51,6 @@ main {
 }
 
 #adicionar{
-    text-align: center;
     background: #1c1c1d;
     padding: 30px;
     border-radius: 15px;
@@ -392,3 +391,28 @@ footer {
   border-radius: 100%;
   border: 3px #C9A441 solid;
 }
+
+#carrinho_compras{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 80px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#pesquisa-icone{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 140px;
+  top: 10px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+#search{ width: 70%; margin: 5px; border-radius: 30px; background-color: #f2f3f4;}

@@ -126,12 +126,11 @@ footer {
     bottom: 0;
     left: 0;
 }
-
-#logo {
-    width: 750px;
-    height: 80px;
+@media (max-width: 900px) {
+  #logo { width: 360px; height: 50px; }
 }
 
+                
 #esqueciSenha:hover {
     text-decoration: underline;
     cursor: pointer;
@@ -152,3 +151,22 @@ footer {
     text-decoration: none;
     color: #0a0040;
 }
+#carrinho_compras{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 80px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#pesquisa-icone{
+  width: 40px;
+  height: 40px;
+  position:absolute;
+  right: 140px;
+  top: 10px;
+  cursor: pointer;
+}
+
+#search{ width: 70%; margin: 5px; border-radius: 30px; background-color: #f2f3f4;}

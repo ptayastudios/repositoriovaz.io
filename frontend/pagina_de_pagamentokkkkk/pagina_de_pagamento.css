@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    outline: 0px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+  background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%), radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%), #d2d2d5;
+    display: grid;
+}@font-face {
+  font-family: 'aliens and cows';
+  src: url('../fontes/aliens\ and\ cows_trial.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+     background: radial-gradient(circle at 60% 30%, rgba(235, 235, 235, 0.714), transparent 70%),
+            radial-gradient(circle at 20% 70%, rgba(151, 151, 151, 0.871), transparent 80%),
+            #d2d2d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+   
+}
+
+
+
+header {
+    background: #1c1c1d;
+    color: #C9A441;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: end;
+    border-bottom: 10px solid #C9A441;
+
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    margin-top: -115px;
+}
+
+#login-box {
+    background: #0c054a;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffb52e;
+    height: 90%;
+    width: 30%;
+    
+}
+
+#login-box h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+#login-box label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+#login-box input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ffb52e;
+    border-radius: 5px;
+    background: #d3d3d3;
+    margin-bottom: 15px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.links a {
+    color: #ffb52e;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+button {
+    background: #ffb52e;
+    color: #0a0040;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffa500;
+}
+
+
+footer {
+    background: #1c1c1d;
+    border-top: 5px solid #C9A441;
+    height: 40px;
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#logo {
+    width: 750px;
+    height: 80px;
+}
+
+a{
+    color:rgb(0, 0, 0);
+    font-size: larger;
+
+}
+h1{
+    background-color: linear-gradient(right, red, chartreuse);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+#mais:hover {
+  animation: girarInfinito 3s linear infinite;
+}
+
+@keyframes girarInfinito {
+  0%{
+        transform: rotateY(0deg)  scale(1);
+        color: blue;
+  }
+  25%{
+        transform: rotateY(90deg)  scale(3);
+        color: red;
+  }
+  50%{
+        transform: rotateY(180deg)  scale(7);
+        color: chartreuse;
+  }
+  75%{
+        transform: rotateY(270deg)  scale(15);
+        color: red;
+  }
+  100%{
+        transform: rotateY(360deg)  scale(1);
+        color: chartreuse;
+
+  }
+}
+h1:hover{
+    animation: aaa linear 5s infinite;
+}
+
+    @keyframes aaa {
+        0%{
+            transform:rotateZ(0deg) rotateY(0deg) scale(1);
+            background-color: blue;
+            color: red;
+        }
+        20%{
+            transform:rotateZ(45deg) rotateY(90deg) scale(4);
+            background-color: chartreuse;
+            color: blue;
+            
+        }
+        40%{
+            transform:rotateZ(90deg) rotateY(180deg) scale(8);
+            background-color: red;
+            color: greenyellow;
+            
+        }
+        60%{
+            transform:rotateZ(135deg) rotateY(270deg) scale(6);
+            background-color: blue;
+            color: red;
+            
+        }
+        80%{
+            transform:rotateZ(200deg) rotateY(360deg) scale(3);
+            background-color: black;
+            color: white;
+            
+        }
+        100%{
+            transform:rotateZ(360deg) rotateY(360deg) scale(1);
+            background-color: white;
+            color: black;
+            
+        }
+
+
+
+        /* 0%{
+            transform:scale(1) rotateZ(0deg) rotateY(0deg);
+            background-color: chartreuse;
+            color: blue;
+        }
+        25%{
+            transform:scale(1.3) rotateZ(180deg) rotateY(90deg);
+            background-color: red;
+            color: greenyellow;
+        }
+        50%{
+            transform:scale(0.8) rotateZ(360deg) rotateY(180deg);
+            background-color: blue;
+            color: red;
+        }
+        75%{
+            transform:scale(1.4) rotateZ(540deg) rotateY(270deg);
+            background-color: black;
+            color: white;
+        }
+        100%{
+            transform:scale(1) rotateZ(720deg) rotateY(360deg);
+            background-color: white;
+             color: black;
+        } */
+    }
+
+  

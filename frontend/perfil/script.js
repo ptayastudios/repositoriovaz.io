@@ -16,12 +16,16 @@ const msg = document.querySelector("#msg");
 const planoN = document.querySelector("#plano-nome");
 const planoI = document.querySelector("#impplano");
 
+let tentativa = 0;
+
 let nivel = "";
 
 
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const imgHeader = document.querySelector('#avatar');
+    tentativa = 0;
+    const imgHeader = document.querySelector('#avatar2');
+    const avatar = document.querySelector('#avatar');
     const descricao = document.querySelector('#info-descricao');
     const nome = document.querySelector('#info-nome');
     const nome2 = document.querySelector('#info-nome2');
@@ -41,6 +45,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (conta) {
             imgHeader.src = conta.img_url || '../../imagens/perfil.png';
+            avatar.src = conta.img_url || '../../imagens/perfil.png';
             nome.innerText = conta.nome || '-----';
             nome2.innerText = conta.nome || '-----';
             descricao.innerText = conta.descricao || '-----';
@@ -149,11 +154,98 @@ window.addEventListener("click", (event)=>{
     }
 }); 
 
+//modal plano
+
+const modalplano = document.querySelector("#modalplano");
+const abrirModalplano = document.querySelector("#cancelar");
+const fecharModalplano = document.querySelector("#fechar-plano");
+const confirmarCancelamento = document.querySelector("#confirmar-cancelamento");
+
+abrirModalplano.addEventListener("click", ()=>{
+    modalplano.style.display = "block";
+});
+
+fecharModalplano.addEventListener("click", ()=>{
+    modalplano.style.display = "none";
+});
+
+confirmarCancelamento.addEventListener("click", async ()=>{
+    
+    
+});
+
+
+//modal excluir conta   bah dale é os guri garai, vai um chirras
+
+// const modalexcluir = document.querySelector("#modalexcluir");
+// const abrirModalexcluir = document.querySelector("#excluir");
+// const fecharModalexcluir = document.querySelector("#fechar-exclusao");
+const confirmarExclusao = document.querySelector('#excluir');
+
+// abrirModalexcluir.addEventListener("click", ()=>{
+//     modalexcluir.style.display = "flex";
+// });
+
+// fecharModalexcluir.addEventListener("click", ()=>{
+//     modalexcluir.style.display = "none";
+// });
+
+confirmarExclusao.addEventListener('click', ()=>{
+    console.log(tentativa);
+    if(confirm('deseja mesmo excluir sua conta?')){
+        if(confirm('tem certeza mesmo?')){
+            if(confirm('pq vc quer excluir sua conta? nosso site é tão maravilhoso, tem certeza mesmo??')){
+                if(confirm('vc vai mesmo fazer isso?')){
+                    if(confirm('eu sei onde vc mora, tem certeza?')){
+                        if(confirm('vc não tem medo não? EU SEI ONDE VOÇÊ MORA!!'))
+                            if(confirm('ok, ok, pode seguir, mas fica de olho na sua vó')){
+                                if(localStorage.getItem('id_salvo') == 1){ alert('voçê não tem permissão para escluir uma conta administradora'); }
+                                else{ 
+                                    if(tentativa < 3){
+                                        tentativa++;
+                                        alert('vai deleta nada não, e fica de olho na sua vó, vai que alguem sequestra a veia sem querer');
+                                        return;
+                                    }else{
+                                        alert('ok, ok, pode deletar, mas fica de olho na sua vó, não seria legal se algo acontecesse com ela')
+                                        deletarConta();
+                                    }
+                                 }
+                            }
+                    }}}}}
+})
+
+async function deletarConta(){
+    try {
+        const resp = await fetch(`http://192.168.1.57:3000/delete/contas/${localStorage.getItem('id_salvo')}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        });
+
+        const data = await resp.json().catch(() => ({}));
+
+        if (!resp.ok) {
+        alert(data.erro || "Erro ao deletar conta");
+        return;
+        }
+
+        alert("conta deletado com sucesso! me aguarde, eu estarei la");
+        localStorage.clear('id_usuario');
+        window.location.href = '../catalogo/index.html';
+    } catch (erro) {
+        console.error("Erro ao deletar conta:", erro);
+        alert("Erro de rede/servidor");
+    }
+}
 
 
 
 
 
+
+const pesquisa = document.querySelector('#search');
+pesquisa.addEventListener('keyup', (e)=>{
+  if(e.key === 'Enter'){ window.location.href = `../pagina_de_pesquisa/pesquisa.html?pesquisa=${pesquisa.value}`; }
+});
 
 
 /*

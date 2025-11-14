@@ -23,7 +23,7 @@ function renderizarProdutos(produtos) {
 
     produtos.forEach((p) => {
       const link = document.createElement("a");
-      link.href = `../Detalhes/detalhes.html?id=${p.id_produto}`;
+      link.href = `../pagina_produto/pagina_produto.html?id=${p.id_produto}`;
       link.target = "_blank";
       link.classList.add("card");
 
